@@ -117,7 +117,7 @@ null: false, foreign_key: true|
 |product_id(商品ID)|integer|null: false,foreign_key: true|
 ### Association
 - belong_to :user
-- belong_to :product
+- has_many :products
 
 
 ## cardsテーブル
@@ -161,7 +161,6 @@ null: false, foreign_key: true|
 ## addressテーブル
 |Column|Type|Options|
 |------|----|-------|
-|address_id(お届け先ID)|integer|null: false,primary key|
 |user_id(顧客ID)|integer|null: false,foreign_key: true|
 |name_cc|string|null: false|
 |name_kc|string|null: false|
