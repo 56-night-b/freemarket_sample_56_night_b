@@ -30,8 +30,8 @@ Things you may want to cover:
 |nickname|string|null: false|
 |mail|string|null: false|
 |password|string|null: false|
-|name_cc|string|null: false|
-|name_kc|string|null: false|
+|name_kanzi|string|null: false|
+|name_kana|string|null: false|
 |birthday|integer|null: false|
 |robot_y_n|string|null: false|
 |phone number|string|null: false|
@@ -69,14 +69,13 @@ Things you may want to cover:
 - has_many :transaction_situation(取引状況)
 - has_many :user-transaction(顧客-取引)
 - has_many :user-product(顧客ー商品)
-- belongs_to :point
-- belongs_to :transfer_application_resume(振込申請履歴)
+- belong_to :point
+- belong_to :transfer_application_resume(振込申請履歴)
 
 ## product(商品)テーブル
 |Column|Type|Options|
 |------|----|-------|
 |product_id(商品ID)|integer|null: false, primary key|
-|image|string|null: false|
 |value|integer|null: false|
 |product_name|string|null: false|
 |product_explanation(商品説明)|integer||
@@ -92,14 +91,25 @@ Things you may want to cover:
 - has_many :user-product(顧客-商品)
 
 
+## image(画像)テーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id(顧客ID)|integer|null: false, foreign_key: true|
+|product_id(商品ID)|integer|
+null: false, foreign_key: true|
+|image|string|null: false|
+### Association
+- belong_to :user
+- belong_to :product
+
 ## user_transaction(顧客-取引)テーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id(顧客ID)|integer|null: false, foreign_key: true|
 |transaction_id(取引ID)|integer|null: false,foreign_key: true|
 ### Association
-- belongs_to :user
-- belongs_to :transaction
+- belong_to :user
+- belong_to :transaction
 
 ## user_product(顧客-商品)テーブル
 |Column|Type|Options|
@@ -107,8 +117,8 @@ Things you may want to cover:
 |user_id(顧客ID)|integer|null: false, foreign_key: true|
 |product_id(商品ID)|integer|null: false,foreign_key: true|
 ### Association
-- belongs_to :user
-- belongs_to :product
+- belong_to :user
+- belong_to :product
 
 
 ## cardsテーブル
@@ -119,7 +129,7 @@ Things you may want to cover:
 |expiration_date(有効期限)|integer|null: false|
 |securitycord|integer|null: false|
 ### Association
-- belongs_to :user
+- belong_to :user
 
 ## evaluation(評価)テーブル
 |Column|Type|Options|
@@ -129,7 +139,7 @@ Things you may want to cover:
 |user_id(評価してくれた人ID)|integer|null: false,foreign_key: true|
 |comment|integer||
 ### Association
-- belongs_to :user
+- belong_to :user
 
 ## to_doテーブル
 |Column|Type|Options|
@@ -138,8 +148,8 @@ Things you may want to cover:
 |transaction_id(取引ID)|integer|null: false,foreign_key: true|
 |text|string|null: false|
 ### Association
-- belongs_to :user
-- belongs_to :transaction
+- belong_to :user
+- belong_to :transaction
 
 ## infomationテーブル
 |Column|Type|Options|
@@ -147,7 +157,7 @@ Things you may want to cover:
 |user_id(顧客ID)|integer|null: false,foreign_key: true|
 |text|string|null: false|
 ### Association
-- belongs_to :user
+- belong_to :user
 
 ## addressテーブル
 |Column|Type|Options|
@@ -164,7 +174,7 @@ Things you may want to cover:
 |phone number|integer|null: false|
 ### Association
 - has_many :transaction
-- belongs_to :user
+- belong_to :user
 
 ## account(口座)テーブル
 |Column|Type|Options|
@@ -178,7 +188,7 @@ Things you may want to cover:
 |account_fi_name(口座名義(メイ))|string|null: false|
 |address(住所)|integer|null: false|
 ### Association
-- belongs_to :user
+- belong_to :user
 
 ## pointテーブル
 |Column|Type|Options|
@@ -190,7 +200,7 @@ Things you may want to cover:
 |point_date|integer|null: false|
 ## Association
 - has_many :transaction
-- belongs_to :user
+- belong_to :user
 
 ## transfer_application_resume(振込申請履歴)テーブル
 |Column|Type|Options|
@@ -201,7 +211,7 @@ Things you may want to cover:
 |value|integer|null: false|
 ### Association
 - has_many :transaction
-- belongs_to :user
+- belong_to :user
 
 ## transaction_message(取引メッセージ)テーブル
 |Column|Type|Options|
@@ -221,8 +231,8 @@ Things you may want to cover:
 |product_id(商品ID)|integer|null: false,foreign_key: true|
 |reading_date(閲覧日時)|integer|null: false|
 ### Association
-- belongs_to :users
-- belongs_to :products
+- belong_to :users
+- belong_to :products
 
 ## nice(いいね)テーブル
 |Column|Type|Options|
@@ -231,8 +241,8 @@ Things you may want to cover:
 |product_id(商品ID)|integer|null: false,foreign_key: true|
 |number|integer|null: false|
 ### Association
-- belongs_to :users
-- belongs_to :products
+- belong_to :users
+- belong_to :products
 
 ## before_message(前メッセージ)テーブル
 |Column|Type|Options|
@@ -243,8 +253,8 @@ user_id(相手ID)|integer|null: false,foreign_key: true|
 |before_message_date|integer|null: false|
 |text|string||
 ### Association
-- belongs_to :users
-- belongs_to :products
+- belong_to :users
+- belong_to :products
 
 ## transaction_situation(取引状況)テーブル
 |Column|Type|Options|
@@ -254,4 +264,4 @@ user_id(相手ID)|integer|null: false,foreign_key: true|
 |transaction_situation_date(取引状況日時)|integer|null: false|
 |situation|string|null: false|
 ### Association
-- belongs_to :transaction
+- belong_to :transaction
