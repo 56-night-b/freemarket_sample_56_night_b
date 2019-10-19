@@ -75,7 +75,7 @@ Things you may want to cover:
 ## product(商品)テーブル
 |Column|Type|Options|
 |------|----|-------|
-|product_id(商品ID)|integer|null: false, primary key|
+|id(商品ID)|integer|null: false, primary key|
 |value|integer|null: false|
 |product_name|string|null: false|
 |product_explanation(商品説明)|integer||
@@ -94,7 +94,6 @@ Things you may want to cover:
 ## image(画像)テーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id(顧客ID)|integer|null: false, foreign_key: true|
 |product_id(商品ID)|integer|
 null: false, foreign_key: true|
 |image|string|null: false|
