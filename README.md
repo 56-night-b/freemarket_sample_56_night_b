@@ -26,7 +26,6 @@ Things you may want to cover:
 ## user(顧客)テーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id(顧客ID)|integer|null: false, primary key|
 |nickname|string|null: false|
 |mail|string|null: false|
 |password|string|null: false|
@@ -57,7 +56,6 @@ Things you may want to cover:
 ## transaction(取引)テーブル
 |Column|Type|Options|
 |------|----|-------|
-|transaction_id(取引ID)|integer|null: false, primary key|
 |product_id(商品ID)|integer|null: false,foreign_key: true|
 |user_id|integer|null: false,foreign_key: true|
 |address_id|integer|null: false,foreign_key: true|
@@ -75,7 +73,6 @@ Things you may want to cover:
 ## product(商品)テーブル
 |Column|Type|Options|
 |------|----|-------|
-|id(商品ID)|integer|null: false, primary key|
 |value|integer|null: false|
 |product_name|string|null: false|
 |product_explanation(商品説明)|integer||
@@ -109,15 +106,6 @@ null: false, foreign_key: true|
 ### Association
 - belong_to :user
 - belong_to :transaction
-
-## user_product(顧客-商品)テーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id(顧客ID)|integer|null: false, foreign_key: true|
-|product_id(商品ID)|integer|null: false,foreign_key: true|
-### Association
-- belong_to :user
-- has_many :products
 
 
 ## cardsテーブル
@@ -191,7 +179,6 @@ null: false, foreign_key: true|
 ## pointテーブル
 |Column|Type|Options|
 |------|----|-------|
-|point_id(pointID)|integer|null: false,primary key|
 |user_id(顧客ID)|integer|null: false,foreign_key: true|
 |transaction_id(取引ID)|integer|null: false,foreign_key: true|
 |point|integer|null: false|
@@ -257,7 +244,6 @@ user_id(相手ID)|integer|null: false,foreign_key: true|
 ## transaction_situation(取引状況)テーブル
 |Column|Type|Options|
 |------|----|-------|
-|transaction_situation_id(取引状況ID)|integer|null: false, primary key|
 |transaction_id(取引ID)|integer|null: false,foreign_key: true|
 |transaction_situation_date(取引状況日時)|integer|null: false|
 |situation|string|null: false|
