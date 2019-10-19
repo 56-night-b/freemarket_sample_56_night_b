@@ -74,7 +74,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |value|integer|null: false|
-|product_name|string|null: false|
+|name|string|null: false|
 |product_explanation(商品説明)|integer||
 |category|integer|null: false|
 |product_situation(商品状態)|string||
@@ -150,8 +150,8 @@ null: false, foreign_key: true|
 |Column|Type|Options|
 |------|----|-------|
 |user_id(顧客ID)|integer|null: false,foreign_key: true|
-|name_cc|string|null: false|
-|name_kc|string|null: false|
+|name_kanzi|string|null: false|
+|name_kana|string|null: false|
 |postal_cord|integer|null: false|
 |prefectures(都道府県)|string|null: false|
 |municipalities(市町村)|string|null: false|
@@ -170,8 +170,8 @@ null: false, foreign_key: true|
 |account_type|string|null: false|
 |branch_cord(支店コード)|integer|null: false|
 |account_cord(口座番号)|integer|null: false|
-|account_fa_name(口座名義(セイ))|string|null: false|
-|account_fi_name(口座名義(メイ))|string|null: false|
+|family_name(口座名義(セイ))|string|null: false|
+|first_name(口座名義(メイ))|string|null: false|
 |address(住所)|integer|null: false|
 ### Association
 - belong_to :user
