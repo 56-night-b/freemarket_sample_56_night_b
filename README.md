@@ -29,11 +29,11 @@ Things you may want to cover:
 |nickname|string|null: false|
 |mail|string|null: false|
 |password|string|null: false|
-|name_kanzi|string|null: false|
+|name_kanji|string|null: false|
 |name_kana|string|null: false|
 |birthday|integer|null: false|
 |robot_y_n|string|null: false|
-|phone number|string|null: false|
+|phone_number|string|null: false|
 |image|string|null: false|
 |introduction|string|null: false|
 ### Association
@@ -95,7 +95,6 @@ Things you may want to cover:
 null: false, foreign_key: true|
 |image|string|null: false|
 ### Association
-- belong_to :user
 - belong_to :product
 
 ## user_transaction(顧客-取引)テーブル
@@ -150,7 +149,7 @@ null: false, foreign_key: true|
 |Column|Type|Options|
 |------|----|-------|
 |user_id(顧客ID)|integer|null: false,foreign_key: true|
-|name_kanzi|string|null: false|
+|name_kanji|string|null: false|
 |name_kana|string|null: false|
 |postal_cord|integer|null: false|
 |prefectures(都道府県)|string|null: false|
@@ -159,7 +158,7 @@ null: false, foreign_key: true|
 |building_name(建物名)|string|null: false|
 |phone number|integer|null: false|
 ### Association
-- has_many :transaction
+- has_many :transactions
 - belong_to :user
 
 ## account(口座)テーブル
@@ -184,7 +183,7 @@ null: false, foreign_key: true|
 |point|integer|null: false|
 |point_date|integer|null: false|
 ## Association
-- has_many :transaction
+- has_many :transactions
 - belong_to :user
 
 ## transfer_application_resume(振込申請履歴)テーブル
@@ -195,7 +194,7 @@ null: false, foreign_key: true|
 |transfer_application_date(振込申請日時)|integer|null: false|
 |value|integer|null: false|
 ### Association
-- has_many :transaction
+- belong_to :transactions
 - belong_to :user
 
 ## transaction_message(取引メッセージ)テーブル
@@ -207,7 +206,7 @@ null: false, foreign_key: true|
 |text|string||
 ### Association
 - has_many :users
-- has_many :transaction
+- has_many :transactionss
 
 ## reading_attention_resume(閲覧履歴)テーブル
 |Column|Type|Options|
@@ -216,8 +215,8 @@ null: false, foreign_key: true|
 |product_id(商品ID)|integer|null: false,foreign_key: true|
 |reading_date(閲覧日時)|integer|null: false|
 ### Association
-- belong_to :users
-- belong_to :products
+- belong_to :user
+- belong_to :product
 
 ## nice(いいね)テーブル
 |Column|Type|Options|
@@ -226,8 +225,8 @@ null: false, foreign_key: true|
 |product_id(商品ID)|integer|null: false,foreign_key: true|
 |number|integer|null: false|
 ### Association
-- belong_to :users
-- belong_to :products
+- belong_to :user
+- belong_to :product
 
 ## before_message(前メッセージ)テーブル
 |Column|Type|Options|
@@ -238,8 +237,8 @@ user_id(相手ID)|integer|null: false,foreign_key: true|
 |before_message_date|integer|null: false|
 |text|string||
 ### Association
-- belong_to :users
-- belong_to :products
+- belong_to :user
+- belong_to :product
 
 ## transaction_situation(取引状況)テーブル
 |Column|Type|Options|
