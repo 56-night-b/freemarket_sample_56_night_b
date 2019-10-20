@@ -37,21 +37,19 @@ Things you may want to cover:
 |image|string|null: false|
 |introduction|string|null: false|
 ### Association
-- has_many :card
-- has_many :evaluation(評価)
-- has_many :to_do
-- has_many :infomation
-- has_many :address
-- has_many :account(口座)
-- has_many :point
-- has_many :transfer_application_resume(振込申請履歴)
-- has_many :transaction_message(取引メッセージ)
-- has_many :reading_attention_resume(閲覧履歴)
-- has_many :nice(いいね)
-
-- has_many :user-transaction(顧客-取引)
-- has_many :user-product(顧客-商品)
-- has_many :before_message(事前メッセージ)
+- has_many :cards
+- has_many :evaluations(評価)
+- has_many :to_dos
+- has_many :infomations
+- has_many :addresses
+- has_many :accounts(口座)
+- has_many :points
+- has_many :transfer_application_resumes(振込申請履歴)
+- has_many :transaction_messages(取引メッセージ)
+- has_many :reading_attention_resumes(閲覧履歴)
+- has_many :nices(いいね)
+- has_many :user-transactions(顧客-取引)
+- has_many :before_messages(事前メッセージ)
 
 ## transaction(取引)テーブル
 |Column|Type|Options|
@@ -62,11 +60,10 @@ Things you may want to cover:
 |date|integer|null: false|
 |transaction_situation_id(取引状況ID)|integer|null: false,foreign_key: true|
 ### Association
-- has_many :to_do
-- has_many :transaction_message(取引メッセージ)
-- has_many :transaction_situation(取引状況)
-- has_many :user-transaction(顧客-取引)
-- has_many :user-product(顧客ー商品)
+- has_many :to_dos
+- has_many :transaction_messages(取引メッセージ)
+- has_many :transaction_situations(取引状況)
+- has_many :user-transactions(顧客-取引)
 - belong_to :point
 - belong_to :transfer_application_resume(振込申請履歴)
 
@@ -82,10 +79,9 @@ Things you may want to cover:
 |shipping_origin(発送元)|integer|null: false|
 |arrival_days(到着日数)|integer||
 ### Association
-- has_many :reading_attention_resume(閲覧履歴)
-- has_many :nice(いいね)
-- has_many :before_message(事前メッセージ)
-- has_many :user-product(顧客-商品)
+- has_many :reading_attention_resumes(閲覧履歴)
+- has_many :nices(いいね)
+- has_many :before_messages(事前メッセージ)
 
 
 ## image(画像)テーブル
@@ -156,7 +152,7 @@ null: false, foreign_key: true|
 |municipalities(市町村)|string|null: false|
 |house_number(番地)|integer|null: false|
 |building_name(建物名)|string|null: false|
-|phone number|integer|null: false|
+|phone_number|integer|null: false|
 ### Association
 - has_many :transactions
 - belong_to :user
@@ -194,7 +190,7 @@ null: false, foreign_key: true|
 |transfer_application_date(振込申請日時)|integer|null: false|
 |value|integer|null: false|
 ### Association
-- belong_to :transactions
+- belong_to :transaction
 - belong_to :user
 
 ## transaction_message(取引メッセージ)テーブル
@@ -206,7 +202,7 @@ null: false, foreign_key: true|
 |text|string||
 ### Association
 - has_many :users
-- has_many :transactionss
+- has_many :transactions
 
 ## reading_attention_resume(閲覧履歴)テーブル
 |Column|Type|Options|
@@ -233,7 +229,7 @@ null: false, foreign_key: true|
 |------|----|-------|
 |user_id(顧客ID)|integer|null: false,foreign_key: true|
 |product_id(商品ID)|integer|null: false,foreign_key: true|
-user_id(相手ID)|integer|null: false,foreign_key: true|
+|user_id(相手ID)|integer|null: false,foreign_key: true|
 |before_message_date|integer|null: false|
 |text|string||
 ### Association
