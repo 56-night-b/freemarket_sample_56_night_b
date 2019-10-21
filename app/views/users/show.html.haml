@@ -1,0 +1,130 @@
+!!!
+%html{lang: "ja"}
+  %head
+    %meta{charset: "utf-8"}
+    %meta{rel: "stylesheets", href: "reset.scss"}
+    %meta{rel: "stylesheets", href: "font-awesome.scss"}
+    %script{src:"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"}
+    %script{src:"/assets/show.js"}
+  %body
+    .whole
+      .container
+        .main
+          .main__user_icon
+            %figure
+              %img{src:"/assets/member_photo_noimage_thumb.png"}
+            %h2.main__user_icon--name
+              user
+            .main__user_icon--number
+              %div
+                評価
+                %span.num
+                  0
+              %div
+                出品数
+                %span.num
+                  0
+          %ul.main__user_tabs
+            %li.main__user_tabs--menu.active
+              %h3
+                お知らせ
+            %li.main__user_tabs--menu
+              %h3
+                やることリスト
+          %ul.contents
+            %li.contents__mainlist.show
+              %ul
+                %li
+                  %img{src: "/assets/mercari_profile.png"}
+                  .main__contents--box
+                    %p
+                      事務所から個別メッセージ「ログイン通知」
+                    %time
+                      = fa_icon 'clock'
+                      30分前
+                %li
+                  %img{src: "/assets/mercari_profile.png"}
+                  .main__contents--box
+                    %p
+                      ３日後、P999還元クーポンの有効期限が切れます！タップして詳細を確認しましょう
+                    = fa_icon 'clock'
+                    %time
+                      １時間前
+                %li
+                  %img{src: "/assets/mercari_profile.png"}
+                  .main__contents--box
+                    .main__contents--box-text
+                      《ご登録記念》¥1000の商品を「実質１円」でご購入いただけます！
+                    = fa_icon 'clock'
+                    %time
+                      １日前
+            %li.contents__mainlist
+              %ul
+                %li
+                  %img{src: "/assets/mercari_profile.png"}
+                  .main__contents--box
+                    .main__contents--box-text
+                      ご登録のメールアドレスに認証メールを送ろました。メールに記載のURLをクリックして、メールアドレスを認証してください
+                    = fa_icon 'clock'
+                    %time
+                      １日前
+        
+        .sid-ber
+          .nav
+            %ul.nav--list
+              %li.art
+                %a{href:"http://localhost:3000/users/show"} マイページ
+              %li.art
+                %a{href:"https://master.tech-camp.in/"}お知らせ
+              %li.art
+                %a{href:"https://master.tech-camp.in/"}やることリスト
+              %li.art
+                %a{href:"https://master.tech-camp.in/"}いいね！一覧
+              %li.art
+                %a{href:"https://master.tech-camp.in/"}出品する
+              %li.art
+                %a{href:"https://master.tech-camp.in/"}出品した商品ー出品中
+              %li.art
+                %a{href:"https://master.tech-camp.in/"}出品した商品ー取引中
+              %li.art
+                %a{href:"https://master.tech-camp.in/"}出品した商品ー売却済み
+              %li.art
+                %a{href:"https://master.tech-camp.in/"}購入した商品ー取引中
+              %li.art
+                %a{href:"https://master.tech-camp.in/"}購入した商品ー過去の取引
+              %li.art
+                %a{href:"https://master.tech-camp.in/"}ニュース一覧
+              %li.art
+                %a{href:"https://master.tech-camp.in/"}評価一覧
+              %li.art
+                %a{href:"https://master.tech-camp.in/"}ガイド
+              %li.art
+                %a{href:"https://master.tech-camp.in/"}問い合わせ
+            %h3
+              メルペイ
+            %ul.nav--list
+              %li.art
+                %a{href:"https://master.tech-camp.in/"}売上・振込申請
+              %li.art
+                %a{href:"https://master.tech-camp.in/"}ポイント
+            %h3
+              設定
+            %ul.nav--list
+              %li.art
+                %a{href:"https://master.tech-camp.in/"}プロフィール
+              %li.art
+                %a{href:"https://master.tech-camp.in/"}発送元・お届け先¥n住居変更
+              %li.art
+                %a{href:"https://master.tech-camp.in/"}支払い方法
+              %li.art
+                %a{href:"https://master.tech-camp.in/"}メール/ パスワード
+              %li.art
+                %a{href:"https://master.tech-camp.in/"}本人情報
+              %li.art
+                %a{href:"https://master.tech-camp.in/"}電話番号の確認
+              %li.art
+                %a{href:"https://master.tech-camp.in/"}ログアウト
+                
+              
+              
+              
