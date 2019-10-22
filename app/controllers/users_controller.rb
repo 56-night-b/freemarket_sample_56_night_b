@@ -1,4 +1,4 @@
 class UsersController < ApplicationController
-  def show
+  def mypage
   end
 end
