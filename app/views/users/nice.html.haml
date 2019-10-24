@@ -1,0 +1,23 @@
+!!!
+%html{lang: "ja"}
+  %head
+    %meta{charset: "utf-8"}
+    %link{rel: "stylesheet", href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css"}
+    %script{src:"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"}
+  %body
+    .whole
+      .container
+        .main_box
+          .nice
+            .nice__title
+              %h2
+                %center
+                  いいね！一覧
+                  
+            %ul.contents2
+              %li.contents2__mainlist2.show2
+                .nice--box
+                  %p
+                    いいね！がありません
+
+        = render partial: 'sidber'
