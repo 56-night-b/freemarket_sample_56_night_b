@@ -20,4 +20,16 @@ class UsersController < ApplicationController
 
   def sold
   end
+
+  def buy_transacting
+  end
+
+  def buy_transacted
+  end
+
+  def news
+  end
+
+  def reviews
+  end
 end

@@ -4,8 +4,9 @@
     %meta{charset: "utf-8"}
     %link{rel: "stylesheet", href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css"}
     %script{src:"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"}
-    %script{src:"/assets/show.js"}
-  %body
+    %meta{:content => "width=device-width,initial-scale=1.0,minimum-scale=1.0", :name => "viewport"}/
+    %script{src:"/assets/mypage.js"}
+  %body{width:"device-width"}
     .whole
       .container
         .main_box
@@ -39,15 +40,15 @@
                     .main__contents--box
                       %p
                         事務所から個別メッセージ「ログイン通知」
+                      %i.far.fa-clock
                       %time
-                        = fa_icon 'clock'
                         30分前
                   %li
                     %img{src: "/assets/mercari_profile.png"}
                     .main__contents--box
                       %p
                         ３日後、P999還元クーポンの有効期限が切れます！タップして詳細を確認しましょう
-                      = fa_icon 'clock'
+                      %i.far.fa-clock
                       %time
                         １時間前
                   %li
@@ -55,7 +56,7 @@
                     .main__contents--box
                       .main__contents--box-text
                         《ご登録記念》¥1000の商品を「実質１円」でご購入いただけます！
-                      = fa_icon 'clock'
+                      %i.far.fa-clock
                       %time
                         １日前
               %li.contents__mainlist
@@ -65,7 +66,7 @@
                     .main__contents--box
                       .main__contents--box-text
                         ご登録のメールアドレスに認証メールを送ろました。メールに記載のURLをクリックして、メールアドレスを認証してください
-                      = fa_icon 'clock'
+                      %i.far.fa-clock
                       %time
                         １日前
           
@@ -96,7 +97,7 @@
                     .contents2__mainlist2--box2
                       %p
                         ご登録のメールアドレスに認証メールを送ろました。メールに記載のURLをクリックして、メールアドレスを認証してください
-                      = fa_icon 'clock'
+                      %i.far.fa-clock
                       %time
                         １日前
         = render partial: 'sidber'

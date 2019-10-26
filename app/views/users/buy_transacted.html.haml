@@ -1,0 +1,43 @@
+!!!
+%html{lang: "ja"}
+  %head
+    %meta{charset: "utf-8"}
+    %link{rel: "stylesheet", href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css"}
+    %script{src:"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"}
+  %body
+    .whole
+      .container
+        .main_box 
+          .buy_product
+            .buy_product__title
+              %h2
+                購入した商品
+            %ul.buy_product__transactions
+              %a{href:"http://localhost:3000/users/mypage/buy_products/transacting"}
+                %li.buy_product__transactions--menu
+                  %h3
+                    取引中
+              %a{href:"http://localhost:3000/users/mypage/buy_products/transacted"}
+                %li.buy_product__transactions--menu.active2
+                  %h3
+                    過去の取引
+                  
+            %ul.contents2
+              %li.contents2__mainlist2
+                %ul
+                  %li
+                    .massage--box
+                      %p
+                        取引中の商品はありません
+
+              %li.contents2__mainlist2.show2
+                %ul
+                  %li
+                    %img{src: "/assets/mercari_profile.png"}
+                    .contents2__mainlist2--box2
+                      %p
+                        ご登録のメールアドレスに認証メールを送ろました。メールに記載のURLをクリックして、メールアドレスを認証してください
+                      %i.far.fa-clock
+                      %time
+                        １日前
+        = render partial: 'sidber'

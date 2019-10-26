@@ -1,0 +1,42 @@
+!!!
+%html{lang: "ja"}
+  %head
+    %meta{charset: "utf-8"}
+    %link{rel: "stylesheet", href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css"}
+    %script{src:"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"}
+  %body
+    .whole
+      .container
+        .main_box
+          .news
+            %h2.news__title
+              ニュース一覧
+
+            .contents
+              .contents__mainlist.show
+                %ul
+                  %li
+                    .timebox
+                      %i.far.fa-clock
+                      %time
+                        10月01日 10:00
+                    %p
+                      事務所から個別メッセージ「ログイン通知」
+                    
+                  %li
+                    .timebox
+                      %i.far.fa-clock
+                      %time
+                        10月02 11:00
+                    %p
+                      ３日後、P999還元クーポンの有効期限が切れます！タップして詳細を確認しましょう
+                  %li
+                    .timebox
+                      %i.far.fa-clock
+                      %time
+                        10月03 12:30
+                    %p
+                      《ご登録記念》¥1000の商品を「実質１円」でご購入いただけます！
+                    
+          
+        = render partial: 'sidber'
