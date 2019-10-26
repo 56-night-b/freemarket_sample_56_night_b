@@ -1,0 +1,113 @@
+!!!
+%html{lang: "ja"}
+  %head
+    %meta{charset: "utf-8"}
+    %link{rel: "stylesheet", href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css"}
+    %script{src:"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"}
+    %script{src:"/assets/reviews.js"}
+  %body
+    .whole
+      .container
+        .main_box
+          .main
+            .main__reviews
+              %h2
+                評価一覧
+
+            %ul.main__reviews_tabs
+              %li.main__reviews_tabs--menu.active3
+                %h3
+                  すべて
+              %li.main__reviews_tabs--menu
+                %h3.tabs-boxs
+                  %i.fas.fa-laugh
+                  良い
+              %li.main__reviews_tabs--menu
+                %h3.tabs-boxs
+                  %i.fas.fa-meh
+                  普通
+              %li.main__reviews_tabs--menu
+                %h3.tabs-boxs
+                  %i.fas.fa-frown
+                  悪い
+
+            %ul.contents
+              %li.contents__mainlist.show3
+                %ul
+                  %li
+                    %img{src: "/assets/member_photo_noimage_thumb.png"}
+                    .main__contents--box
+                      %p
+                        %i.fas.fa-laugh
+                        出品者
+                      %p
+                        good
+                      %time
+                        %i.far.fa-clock
+                        2019年10月18日　01:14
+                  %li
+                    %img{src: "/assets/member_photo_noimage_thumb.png"}
+                    .main__contents--box
+                      %p
+                        %i.fas.fa-meh
+                        出品者
+                      %p
+                        normal
+                      %time
+                        %i.far.fa-clock
+                        2019年10月19日　04:56
+                  %li
+                    %img{src: "/assets/member_photo_noimage_thumb.png"}
+                    .main__contents--box
+                      %p
+                        %i.fas.fa-frown
+                        出品者
+                      %p
+                        bad
+                      %time
+                        %i.far.fa-clock
+                        2019年10月20日　12:34
+
+              %li.contents__mainlist
+                %ul
+                  %li
+                    %img{src: "/assets/member_photo_noimage_thumb.png"}
+                    .main__contents--box
+                      %p
+                        %i.fas.fa-laugh
+                        出品者
+                      %p
+                        good
+                      %time
+                        %i.far.fa-clock
+                        2019年10月18日　01:14
+
+              %li.contents__mainlist
+                %ul
+                  %li
+                    %img{src: "/assets/member_photo_noimage_thumb.png"}
+                    .main__contents--box
+                      %p
+                        %i.fas.fa-meh
+                        出品者
+                      %p
+                        normal
+                      %time
+                        %i.far.fa-clock
+                        2019年10月19日　04:56
+              %li.contents__mainlist
+                %ul
+                  %li
+                    %img{src: "/assets/member_photo_noimage_thumb.png"}
+                    .main__contents--box
+                      %p
+                        %i.fas.fa-frown
+                        出品者
+                      %p
+                        bad
+                      %time
+                        %i.far.fa-clock
+                        2019年10月20日　12:34
+          
+
+        = render partial: 'sidber'

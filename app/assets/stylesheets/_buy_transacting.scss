@@ -1,0 +1,111 @@
+//userのshowに対してのscss//
+//全体の設定//
+.whole{
+  background-color: #f5f5f5;
+}
+
+//右側の全体設定//
+.container{
+  padding-top: 40px;
+  margin: 0 auto;
+  width: 1020px;
+  height: 1250px;
+  overflow: hidden;
+}
+
+a{
+  text-decoration: none;
+  color: #000;
+}
+
+// 右側のメインについて
+.main_box{
+  float: right;
+  .buy_product{
+    width: 700px;
+    margin-top: 40px;
+    //メイン下部、について//
+    &__title{
+      height: 72px;
+      background-color: #fafafa;
+      padding-left: 4%; 
+      h2{
+        line-height: 72px;
+      }
+    }
+    //tabの設定//
+    &__transactions{
+      font-size: 0;   //横並びの時の隙間をなくす//
+      height: 74px;
+      width: 100%;
+      background-color: #f5f5f5;
+      li{
+        display: inline-block;
+        list-style: none;
+        height: 74px;
+        width: 50%;
+        h3{
+          line-height: 74px;
+          text-align: center;
+          font-size: 16px;
+          font-weight: bold;
+          color: #333;
+        }
+      }
+      li :not(.active2):hover{
+        opacity: 0.5;
+        transition: .8s;
+      }
+      .active2{
+        border-top: 2px solid red;
+        background: #fff;
+        color: #353d3e;
+      }
+    }
+    //リスト以下の範囲//
+    .contents2{
+      background-color: #fff;
+      &__mainlist2{
+        list-style: none;
+        display: none;
+        ul{
+          li{
+            list-style: none;
+            padding: 10px 0 0 0;
+            border-bottom: 1px solid #f5f5f5;
+            overflow: hidden;
+            .massage--box{
+              height: 236px;
+              background-image: url("/assets/f6c64e435ecb89cf94b0a61c2beda92b.png");
+              background-size: 700px;
+              p{
+                font-size: 14px;
+                text-align: center;
+                line-height: 330px;
+                color: rgb(200, 200, 200);
+              }
+            }
+            img{
+              height: 48px;
+              width: 48px;
+            }
+            .contents2__mainlist2--box2{
+              width: calc(100% - 58px);
+              float: right;
+              p{
+                font-size: 14px;
+              }
+              time{
+                color: #888;
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+      .show2 {
+        display: block;
+      }
+    }
+  }
+}
