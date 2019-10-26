@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root :to => 'main#index'
   get 'users/mypage' => 'users#mypage'
   get 'users/mypage/notice' => 'users#notice'
