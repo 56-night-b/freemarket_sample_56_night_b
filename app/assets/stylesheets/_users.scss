@@ -100,11 +100,12 @@ a{
             border-bottom: 1px solid #f5f5f5;
             overflow: hidden;
             img{
+              margin-left: 0 5px 0 10px;
               height: 48px;
               width: 48px;
             }
             .main__contents--box{
-              width: calc(100% - 58px);
+              width: calc(100% - 73px);
               float: right;
               p{
                 font-size: 14px;
@@ -187,11 +188,12 @@ a{
               }
             }
             img{
+              margin: 0 0 0 10px;
               height: 48px;
               width: 48px;
             }
             .contents2__mainlist2--box2{
-              width: calc(100% - 58px);
+              width: calc(100% - 68px);
               float: right;
               p{
                 font-size: 14px;
