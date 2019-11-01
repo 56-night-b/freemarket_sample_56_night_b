@@ -1,0 +1,182 @@
+.sell-wrapper
+  .sell-header
+    %h1= image_tag 'logo.svg', size: "185x49"
+    
+  .sell-main
+    .main-bar
+      .main-bar_innetr
+        %h2.main-bar_header
+          商品の情報を入力
+        .sell-form
+          .sell-form-up-loader
+            %h3.sell-form-up-loader_title
+              %label 出品画像
+              %span.sell-form-up-loader_form-require
+                必須
+              %p
+                最大10枚までアップロードできます
+               
+            .up-loader_form
+              .up-loader_form-text
+                ドラッグアンドドロップ
+                %br
+                  またはクリックしてファイルをアップロード
+
+              
+          .sell-content
+            .sell-content_form-box
+              .sell-content_name
+                %label 商品名
+                %span.sell-form-up-loader_form-require
+                  必須
+              .sell-content_form-field
+                %input.sell-text-field{type: "text",placeholder: "商品名（必須 40文字まで)"}
+            .sell-content_form-box
+
+              .sell-content_explanatory-text
+                %label 商品の説明
+                %span.sell-form-up-loader_form-require
+                  必須
+              .sell-content_form-area
+                %textarea.sell-text-area{rows:  "5", color: "initial",placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}
+
+
+
+          .sell-content
+            .sell-content_feature
+              商品の詳細
+            .sell-content_form-box-category
+              
+
+              .sell-content_category
+                カテゴリー
+                %span.sell-form-up-loader_form-require
+                  必須
+              .sell-content_category-form
+                %select.sell-content_category-form-selector{name: "example"}
+                  %option{:value => ""} ---
+
+              .sell-content_condition
+                商品の状態
+                %span.sell-form-up-loader_form-require
+                  必須
+              .sell-content_condition-form
+                %select.sell-content_condition-form-selector{name: "example"}
+                  %option{:value => ""} ---
+            
+
+          .sell-content
+            .sell-content_about-shipping-products
+              発送について
+              %a.question-form 
+                ?
+              
+            .sell-content_about-shipping-products-form-box
+              .sell-content_about-shipping-products-form-title-1
+                配送料の負担
+                %span.sell-form-up-loader_form-require
+                  必須
+              .sell-content_about-shipping-products-from-category
+                %select.sell-content_about-shipping-products-from-selector{name: "example"}
+                  %option{:value => ""} ---
+            .sell-content_about-shipping-products-form-box
+              .sell-content_about-shipping-products-form-title-2
+                発送元の地域
+                %span.sell-form-up-loader_form-require
+                  必須
+              .sell-content_about-shipping-products-from-category
+                %select.sell-content_about-shipping-products-from-selector{name: "example"}
+                  %option{:value => ""} ---
+            .sell-content_about-shipping-products-form-box
+              .sell-content_about-shipping-products-form-title-3
+                発送までの日数
+                %span.sell-form-up-loader_form-require
+                  必須
+              .sell-content_about-shipping-products-from-category
+                %select.sell-content_about-shipping-products-from-selector{name: "example"}
+                  %option{:value => ""} ---
+
+
+          .sell-price-box
+            .sell-price-box_selling-price
+              販売価格(300〜9,999,999)
+              %a.question-form 
+                ?
+            .sell-price-box_form-selling-price
+              %ul.sell-price-list-box
+                %li.price-box
+                  .price-box_title-price
+                    価格
+                    %span.sell-form-up-loader_form-require
+                      必須
+                  .price-box_form-price 
+                    ¥
+                    %input.price-text-field{type: "text",placeholder: "例）300",style:"text-align: right"}
+                %li.fee-box
+                  .fee-box_title-fee
+                    販売手数料（10％）
+                  .fee-box_form-fee
+                    &ndash;
+                    
+                %li.profit-box
+                  .profit-box_title-profit
+                    販売利益
+                  .profit-box_form-profit
+                    &#150;
+
+
+          .sell-btn-box
+            .sell-btn-box_text-box
+              %p.warning-text  
+                %a.link-text
+                  禁止されている出品
+                、
+                %a.link-text
+                  行為
+                を必ずご確認ください。
+                  
+                  
+                 
+              %p.warning-text  
+                またブランド品でシリアルナンバー等がある場合はご記載ください。
+                %a.link-text
+                  偽ブランドの販売
+                は犯罪であり処罰される可能性があります。
+              %p.warning-text  
+                また、出品をもちまして
+                %a.link-text
+                  加盟店規約
+                に同意したことになります。
+
+            .sell-btn-box_sell-btn
+              出品する
+
+            .sell-btn-box_return-btn
+              もどる
+
+  .sell-footer
+    .sell-footer_link-text-box
+      %a.under-link-text
+        プライバシーポリシー
+      
+      %a.under-link-text2
+        メルカリ利用規約
+      
+      %a.under-link-text2
+        特定商取引に関する表記
+
+
+    .sell-footer_image-log-box
+      %h1= image_tag 'logo-gray.svg', height: "65", width: "80"
+
+      .sell-footer_under-text-box
+        %p.under-text© 2019 Mercari
+
+
+
+
+
+
+
+
+
