@@ -1,0 +1,60 @@
+!!!
+%html{lang: "ja"}
+  %head
+    %meta{charset: "utf-8"}
+    %link{rel: "stylesheet", href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css"}
+    %script{src:"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"}
+    %script{src:"/assets/show.js"}
+  %body
+    .whole
+      .container
+        .main_box
+          .main
+            %ul.main__user_tabs
+              %a{href:"http://localhost:3000/users/mypage/notice"}
+                %li.main__user_tabs--menu
+                  %h3
+                    お知らせ
+              %a{href:"http://localhost:3000/users/mypage/to_do"}
+                %li.main__user_tabs--menu.active
+                  %h3
+                    やることリスト
+            %ul.contents
+              %li.contents__mainlist
+                %ul
+                  %li
+                    %img{src: "/assets/mercari_profile.png"}
+                    .main__contents--box
+                      %p
+                        事務所から個別メッセージ「ログイン通知」
+                      %i.far.fa-clock
+                      %time
+                        30分前
+                  %li
+                    %img{src: "/assets/mercari_profile.png"}
+                    .main__contents--box
+                      %p
+                        ３日後、P999還元クーポンの有効期限が切れます！タップして詳細を確認しましょう
+                      %i.far.fa-clock
+                      %time
+                        １時間前
+                  %li
+                    %img{src: "/assets/mercari_profile.png"}
+                    .main__contents--box
+                      .main__contents--box-text
+                        《ご登録記念》¥1000の商品を「実質１円」でご購入いただけます！
+                      %i.far.fa-clock
+                      %time
+                        １日前
+              %li.contents__mainlist.show
+                %ul
+                  %li
+                    %img{src: "/assets/mercari_profile.png"}
+                    .main__contents--box
+                      .main__contents--box-text
+                        ご登録のメールアドレスに認証メールを送ろました。メールに記載のURLをクリックして、メールアドレスを認証してください
+                      %i.far.fa-clock
+                      %time
+                        １日前
+          
+        = render partial: 'sidber'
