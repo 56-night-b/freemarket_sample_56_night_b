@@ -1,0 +1,37 @@
+!!!
+%html{lang: "ja"}
+  %head
+    %meta{charset: "utf-8"}
+    %link{rel: "stylesheet", href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css"}
+    %script{src:"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"}
+  %body
+    .whole
+      .container
+        .main_box
+          .sold_product
+            .sold_product__title
+              %h2
+                出品した商品
+            %ul.sold_product__tabs
+              %a{href:"http://localhost:3000/users/mypage/selling"}
+                %li.sold_product__tabs--menu
+                  %h3
+                    出品中
+              %a{href:"http://localhost:3000/users/mypage/transacting"}
+                %li.sold_product__tabs--menu
+                  %h3
+                    取引中
+              %a{href:"http://localhost:3000/users/mypage/sold"}
+                %li.sold_product__tabs--menu.active2
+                  %h3
+                    売却済み
+                  
+            %ul.contents2
+              %li.contents2__mainlist2.show2
+                %ul
+                  %li
+                    .massage--box
+                      %p
+                        取引中の商品はありません
+
+        = render partial: 'sidber'

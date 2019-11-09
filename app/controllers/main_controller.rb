@@ -1,15 +1,15 @@
 class MainController < ApplicationController
 
-  def index
+  def index #トップページ
   end
 
-  def new
+  def new# 商品出品
   end
 
-  def updata
+  def updata#商品購入
   end
 
-  def show
+  def show#商品詳細
   end
   
 end
