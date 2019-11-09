@@ -11,77 +11,77 @@
 
   %body
   %header
-    .header-contents
-      .header-top-side
-        .top-logo
+    .HeaderContents
+      .HeaderContents-HeaderTopSide
+        .HeaderContents-HeaderTopSide--TopLogo
         %a{ href: 'http://google.co.jp', id: 'top-page-top' }
           = image_tag src="/assets/merukari-header-logo.svg",size: '134x36'
 
-        .form
-          %form{action: "#", method: "post"}
-            .textarea-wrap
-              %input{style: "width:840px;height:36px;", type: "text",placeholder: "何かお探しですか？"}/
-              %input.btn{type: "submit", value: ""}/
+        .HeaderContents-HeaderTopSide--form
+          %form.HeaderContents-HeaderTopSide--form1{action: "自分のサイトURL", method: "get"}
+            %input.HeaderContents-HeaderTopSide--box1{name: " ", placeholder: "何かお探しですか？", type: "text"}/
+            %button.btn{type: "submit"}
               %i.fas.fa-search
 
+
               
-      .header-bottom-side
-        .bottom-left
-          .category
+      .HeaderContentsHeaderBottomSide
+        .HeaderContentsHeaderBottomSide-BottomLeft
+          .HeaderContentsHeaderBottomSide-BottomLeft__category
           %a{href: "#"} 
             %i.fas.fa-list-ul.my-red
             カテゴリーから探す
-          .brand
+          .HeaderContentsHeaderBottomSide-BottomLeft__brand
           %a{href: "#"} 
             %i.fas.fa-tags.my-red
             ブランドから探す
-        .bottom-right
-          %ul.user-contents
-            %li.like
+        .HeaderContentsHeaderBottomSide-BottomRight
+          %ul.HeaderContentsHeaderBottomSide-BottomRight__UserContents
+            %li.HeaderContentsHeaderBottomSide-BottomRight__UserContents-like
             %a{href: "#"} 
               %i.far.fa-heart
               いいね！一覧
-            %li.news
+            %li.HeaderContentsHeaderBottomSide-BottomRight__UserContents-news
             %a{href: "#"} 
               %i.far.fa-bell
               お知らせ
-            %li.todo
+            %li.HeaderContentsHeaderBottomSide-BottomRight__UserContents-todo
             %a{href: "#"} 
               %i.fas.fa-check
               やることリスト
-            %li.mypage
+            %li.HeaderContentsHeaderBottomSide-BottomRight__UserContents-mypage
             %a{href: "#"} 
               = image_tag src="https://static.mercdn.net/images/member_photo_noimage_thumb.png",size: '32x32',class: "mypage-image"
               %p#mypage マイページ
 
     = yield
 
-  .camera-mark
+  .CameraMark
     %a{href: "#"}
-      .shuppin.my-white
+      .CameraMark-shuppin.my-white
         出品
-      .camera-image
+      .CameraMark-camera-image
         %i.fas.fa-camera.my-white.fa-4x
 
   .aside
     .aside-contents
-      .background-text
-        .background-text1
+      .aside-contents-BackgroundText
+        .aside-contents-BackgroundText__text1
           スマホでかんたんフリマアプリ
-        .background-text2
+        .aside-contents-BackgroundText__text2
           今すぐ無料ダウンロード！
-        .left-dl-contents
+        .aside-contents-BackgroundText__LeftDlContents
         = image_tag src="https://web-jp-assets.mercdn.net/_next/static/images/mercari_icon-f75780e32e41e052c8aaa8b446331cd8.png",size: '68x68',class: "dl-content"
         = image_tag src="https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg",size: '144x40',class: "dl-content"
         = image_tag src="https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg",size: '144x40',class: "dl-content"
       
-      .right-image
+      .aside-contents__RightImage
       = image_tag src="https://web-jp-assets.mercdn.net/_next/static/images/download_app_pc-a4418175e8be071827ac88d073f40e4a.png",size: '300x260',class: "image"
   %footer
-    .nav
-      .nav-left
+    .footer-nav
+      .footer-nav-NavLeft
         %h2 メルカリについて
-        %ul.bottom-list
+        %ul.BottomList
           %li
           %a{href: "#"}
             会社概要（運営会社）
@@ -97,16 +97,16 @@
           %li 
           %a{href: "#"}
             メルカリロゴ利用ガイドライン
-        .sns-logo
-          .twitter
+        .footer-nav-NavLeft-SnsLogo
+          .footer-nav-NavLeft-SnsLogo--twitter
           %a{href: "#"}
             %i.fab.fa-twitter-square.my-white.fa-2x
-          .facebook
+          .footer-nav-NavLeft-SnsLogo--facebook
           %a{href: "#"}
             %i.fab.fa-facebook-square.my-white.fa-2x
-      .nav-right
+      .footer-nav-NavRight
         %h2 ヘルプ&ガイド
-        %ul.bottom-list
+        %ul.BottomList
           %li メルカリガイド
           %li らくらくメルカリ便
           %li ゆうゆうメルカリ便
@@ -115,27 +115,27 @@
           %li メルカリあんしん・あんぜん宣言！
           %li 偽ブランド品撲滅への取り組み
           %li メルカリボックス
-      .nav-bottom
+      .footer-nav-NavBottom
         %h2 プライバシーと利用規約
-        %ul.bottom-list
+        %ul.BottomList
           %li プライバシーポリシー
           %li メルカリ利用規約
           %li あんしんスマホサポート制度に関する利用特約
           %li コンプライアンスポリシー
-      .nav-list
-        %ul.bottom-list
+      .footer-nav-NavList
+        %ul.BottomList
           %li 個人データの安全管理に係る基本方針
           %li 特定商取引に関する表記
           %li 資金決済法に基づく表示
           %li 法令順守と犯罪抑止のために
-      .nav-bottom2
-        %h2 国
-        %ul.bottom-list
+      .footer-nav-NavBottom2
+        %h2#country 国
+        %ul.BottomList
           %li 日本
           %li United States
 
-    .bot-logo
+    .footer-nav--BotLogo
       = image_tag src="/assets/merukari-bottom-logo.svg",size: '124x33'
       %a{ href: 'http://google.co.jp', id: 'top-page-top' }
 
-      %p.coop © 2019 Mercari
+      %p.footer-nav--BotLogo__Coop © 2019 Mercari
