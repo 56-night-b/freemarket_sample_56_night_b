@@ -10,14 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_26_111625) do
+ActiveRecord::Schema.define(version: 2019_11_09_112533) do
+
+  create_table "addresses", force: :cascade do |t|
+    t.string "name_kanji", null: false
+    t.string "name_kana", null: false
+    t.integer "postal_cord", null: false
+    t.string "prefectures", null: false
+    t.string "municipalities", null: false
+    t.integer "house_number", null: false
+    t.string "building_name", null: false
+    t.integer "phone_number", null: false
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "nickname"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "name_kanji", null: false
-    t.string "name_kana", null: false
     t.integer "birthday", null: false
     t.integer "phone_number", null: false
     t.integer "image"
@@ -27,9 +40,11 @@ ActiveRecord::Schema.define(version: 2019_10_26_111625) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "famliy_name_kanji"
+    t.string "famliy_name_kana"
+    t.string "first_name_name_kanji"
+    t.string "first_name_name_kana"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["name_kana"], name: "index_users_on_name_kana"
-    t.index ["name_kanji"], name: "index_users_on_name_kanji"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

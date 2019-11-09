@@ -1,5 +1,6 @@
 %head
   %script{:async => "", :defer => "defer", :src => "https://www.google.com/recaptcha/api.js"}
+  %link{rel: "stylesheet", href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css"}
 %body{backgroundcolor:"#f5f5f5"}
   .header-stage
     .h-left
@@ -13,11 +14,11 @@
             %font{color:"#ff0000"}
               .maru1 ●
             .box
-              %hr{color:"#bbbbbb"}
+              %hr{color:"#ff0000"}
         .dankai-box
           %li
-            %font{color:"#bbbbbb"}電話番号認証
-            %font{color:"#bbbbbb"}
+            %font{color:"#ff0000"}電話番号認証
+            %font{color:"#ff0000"}
               .maru1 ●
             .box
               %hr{color:"#bbbbbb"}
@@ -43,38 +44,24 @@
   
   .main1
     .main1__toptext
-      会員情報入力
+      電話ば番号の確認
     .main1__buttomtext
-      = form_for @user, url:sign_up2_users_path, method: :get do |f|
+      = form_for @user, url:sign_up3_users_path, method: :get do |f|
         .field
           .field-input
             .field-input__label
-              = f.label :nickname,"ニックネーム"
-              .required-box 必須
+              = f.label :phone_number,"電話番号"
             .field-input__text
-              = f.text_field :nickname, placeholder: '例) メルカリ太郎',size:30
-          .field-input
-            .field-input__label
-              = f.label :email,"メールアドレス"
-              .required-box 必須
-            .field-input__text
-              = f.email_field :email, autofocus: true,placeholder: 'info@mail.jp' ,size:30
-          .field-input
-            .field-input__label
-              = f.label :password,"パスワード"
-              .required-box 必須
-            .field-input__text
-              = f.password_field :password, autocomplete: "off", placeholder: '12345678',size:30
-          .field-input
-            .field-input__label
-              = f.label :password_confirmation, 'パスワード(確認)'
-              .required-box 必須
-            .field-input__text
-              = f.password_field :password_confirmation, class: 'form-control', placeholder: '12345678',size:30
-          .field-input
-            .g-recaptcha{"data-callback" => "validateRecaptcha", "data-sitekey" => "6Le0x78UAAAAALn6klXFzUR91sbFx0_jSxtaCVHJ"}
+              = f.number_field :phone_number, placeholder:'携帯電話の番号を入力',size:30
+            %p 本人確認のため、携帯電話のSNS(ショートメッセージサービス)を利用して認証を行います。
+          
           .actions
-            = f.submit "次に進む", class: 'btn1'
+            = f.submit "SNSを送信する", class: 'btn1'
+            %p 電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+      .num-reason
+        %a{href:"https://www.mercari.com/jp/"}
+          %p 電話番号の確認が必要な理由
+          %i.fas.fa-angle-right
   .footer
     %ul
       %li
