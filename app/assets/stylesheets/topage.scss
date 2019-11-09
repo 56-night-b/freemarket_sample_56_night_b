@@ -276,12 +276,12 @@ h2 {
   width: 1020px;
   height:350px;
   margin: 0 auto;
-  &-NavBottom2 {
+  &-Navbottom2 {
     text-align: center;
-  position:relative;
-  right:10px;
+    position:relative;
+    right:10px;
   }
-  &-NavLeft-NavList {
+  &-NavLeft-Navlist {
     display: -webkit-flex;
     display: flex;
     margin-top:30px;
@@ -297,7 +297,7 @@ h2 {
   }
 }
 
-.footer-nav-NavLeft, .footer-nav-NavRight, .footer-nav-NavBottom, .footer-nav-NavList, .footer-nav-NavBottom2 {
+.footer-nav-NavLeft, .footer-nav-NavRight, .footer-nav-NavBottom, .footer-nav-Navlist, .footer-nav-NavBottom2 {
   margin:18px 0 0;
   padding:0 12px 0 0;
 }
@@ -364,28 +364,23 @@ h2 {
   }
 }
 
-footer {
+footer.TopPage {
   background-color: rgb(34, 34, 34);
   height:450px;
+  width:100%;
   &-nav--BotLogo {
-    display: -webkit-flex;
-    display: flex;
-    width:1020px;
+    width:100%;
     margin:30px 190px 20px;
-    &__Coop {
-      color:white;
-      margin-left:350px;
-      font-size:12px;
-      margin-top:10px;
-    }
   }
 }
 
-.logo {
-  display: -webkit-flex;
-  display: flex;
-  height: 100px;
+.footer-nav--Botlogo__Coop {
+  color:white;
+  margin-left:600px;
+  font-size:12px;
+  margin-top:10px;
 }
+
 
 .my-white {
   color:white;
