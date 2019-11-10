@@ -79,7 +79,6 @@
       width: 500px;
       height:30px;
       position:relative;
-      bottom:14px;
     }
   }
 }
@@ -98,7 +97,7 @@
 
 #mypage {
   position: relative;
-  bottom:40px;
+  bottom:24px;
   left:40px;
 }
 
@@ -297,7 +296,7 @@ h2 {
   }
 }
 
-.footer-nav-NavLeft, .footer-nav-NavRight, .footer-nav-NavBottom, .footer-nav-Navlist, .footer-nav-NavBottom2 {
+.footer-nav-NavLeft, .footer-nav-NavRight, .footer-nav-NavBottom, .footer-nav-Navlist, .footer-nav-Navbottom2 {
   margin:18px 0 0;
   padding:0 12px 0 0;
 }
@@ -368,17 +367,17 @@ footer.TopPage {
   background-color: rgb(34, 34, 34);
   height:450px;
   width:100%;
-  &-nav--BotLogo {
-    width:100%;
-    margin:30px 190px 20px;
-  }
 }
 
-.footer-nav--Botlogo__Coop {
-  color:white;
-  margin-left:600px;
-  font-size:12px;
-  margin-top:10px;
+.footer-nav--Botlogo {
+  margin-left: 200px;
+
+  &__Coop {
+    color:white;
+    margin-left:700px;
+    font-size:12px;
+    margin-top:10px;
+  }
 }
 
 
