@@ -1,9 +1,9 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title メルカリ スマホでかんたん フリマアプリ
-    %link{:crossorigin => "anonymous", :href => "https://use.fontawesome.com/releases/v5.7.2/css/all.css", :integrity => "sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr", :rel => "stylesheet"}/
+    %link{crossorigin:"anonymous", href: "https://use.fontawesome.com/releases/v5.7.2/css/all.css", integrity: "sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr", rel: "stylesheet"}/
     
 
     
@@ -12,9 +12,9 @@
     .HeaderContents
       .HeaderContents-HeaderTopSide
         .HeaderContents-HeaderTopSide--TopLogo
-        %a{ href: 'http://google.co.jp', id: 'top-page-top' }
-          = image_tag src="/assets/merukari-header-logo.svg",size: '134x36'
+        = link_to(image_tag('merukari-header-logo.svg', size: '136x36', border: 0), 'http://www.yahoo.co.jp', popup: true)
 
+          
         .HeaderContents-HeaderTopSide--form
           %form.HeaderContents-HeaderTopSide--form1{action: "自分のサイトURL", method: "get"}
             %input.HeaderContents-HeaderTopSide--box1{name: " ", placeholder: "何かお探しですか？", type: "text"}/
@@ -26,35 +26,30 @@
       .HeaderContentsHeaderBottomSide
         .HeaderContentsHeaderBottomSide-BottomLeft
           .HeaderContentsHeaderBottomSide-BottomLeft__category
-          %a{href: "#"} 
             %i.fas.fa-list-ul.my-red
-            カテゴリーから探す
+            = link_to("カテゴリーから探す", "http://google.co.jp")
           .HeaderContentsHeaderBottomSide-BottomLeft__brand
-          %a{href: "#"} 
             %i.fas.fa-tags.my-red
-            ブランドから探す
+            = link_to("ブランドから探す", "http://google.co.jp")
         .HeaderContentsHeaderBottomSide-BottomRight
           %ul.HeaderContentsHeaderBottomSide-BottomRight__UserContents
             %li.HeaderContentsHeaderBottomSide-BottomRight__UserContents-like
-            %a{href: "#"} 
               %i.far.fa-heart
-              いいね！一覧
+              = link_to("いいね一覧", "http://google.co.jp")
             %li.HeaderContentsHeaderBottomSide-BottomRight__UserContents-news
-            %a{href: "#"} 
               %i.far.fa-bell
-              お知らせ
+              = link_to("お知らせ", "http://google.co.jp")
             %li.HeaderContentsHeaderBottomSide-BottomRight__UserContents-todo
-            %a{href: "#"} 
               %i.fas.fa-check
-              やることリスト
+              = link_to("やることリスト", "http://google.co.jp")
             %li.HeaderContentsHeaderBottomSide-BottomRight__UserContents-mypage
-            %a{href: "#"} 
               = image_tag src="https://static.mercdn.net/images/member_photo_noimage_thumb.png",size: '32x32',class: "mypage-image"
-              %p#mypage マイページ
+              %p#mypage
+                = link_to("マイページ", "http://google.co.jp")
 
 
   .TopPageMovingImage
-    = image_tag src="https://web-jp-assets.mercdn.net/_next/static/images/top-banner-camp-4f3fd88c685e8932d7dde2ad3a8336ba.jpg",size: '1440x390',class: "example-image"
+    = link_to(image_tag('https://web-jp-assets.mercdn.net/_next/static/images/top-banner-camp-4f3fd88c685e8932d7dde2ad3a8336ba.jpg', size: '1440x390', border: 0), 'http://www.yahoo.co.jp', popup: true)
   .PopularCategory
     人気のカテゴリー
     %ul.PopularCategory__CategoryTags
@@ -68,35 +63,35 @@
       .more もっと見る＞
     .ContentsWrap__LadiesNewItem
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
@@ -104,35 +99,35 @@
               %figcaption supreme
     .item-bottom
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
@@ -142,35 +137,35 @@
       %p.NewItem メンズ新着アイテム
     .ContentsWrap__LadiesNewItem
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
@@ -178,35 +173,35 @@
               %figcaption supreme
     .item-bottom
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
@@ -215,35 +210,35 @@
     %p.NewItem 家電・スマホ・カメラ新着アイテム
     .ContentsWrap__LadiesNewItem
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
@@ -251,35 +246,35 @@
               %figcaption supreme
     .item-bottom
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
@@ -288,35 +283,35 @@
     %p.NewItem おもちゃ・ホビー・グッズ新着アイテム
     .ContentsWrap__LadiesNewItem
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
@@ -324,35 +319,35 @@
               %figcaption supreme
     .item-bottom
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
@@ -371,35 +366,35 @@
     %p.NewItem シャネル新着アイテム
     .ContentsWrap__LadiesNewItem
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
@@ -407,35 +402,35 @@
               %figcaption supreme
     .item-bottom
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
@@ -444,35 +439,35 @@
     %p.NewItem ルイヴィトン新着アイテム
     .ContentsWrap__LadiesNewItem
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
@@ -480,35 +475,35 @@
               %figcaption supreme
     .item-bottom
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
@@ -517,35 +512,35 @@
     %p.NewItem シュプリーム新着アイテム
     .ContentsWrap__LadiesNewItem
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
@@ -553,35 +548,35 @@
               %figcaption supreme
     .item-bottom
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
@@ -590,35 +585,35 @@
     %p.NewItem ナイキ新着アイテム
     .ContentsWrap__LadiesNewItem
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p 18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
@@ -626,42 +621,43 @@
               %figcaption supreme
     .item-bottom
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
       .item-image
-        %a.item-link{href: "#"} 
+        = link_to ("https://ja-jp.facebook.com/") do 
           %div
             .image-text
               = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
               %p ¥18,000
               %figcaption supreme
+
   .CameraMark
-    %a{href: "#"}
+    = link_to ("https://twitter.com/") do
       .CameraMark-shuppin.my-white
         出品
       .CameraMark-camera-image
@@ -688,26 +684,21 @@
         %h2 メルカリについて
         %ul.BottomList
           %li
-          %a{href: "#"}
             会社概要（運営会社）
           %li
-          %a{href: "#"}
             採用情報
           %li 
-          %a{href: "#"}
             プレスリリース
           %li 
-          %a{href: "#"}
             公式ブログ
           %li 
-          %a{href: "#"}
             メルカリロゴ利用ガイドライン
         .footer-nav-NavLeft-SnsLogo
           .footer-nav-NavLeft-SnsLogo--twitter
-          %a{href: "#"}
+          = link_to ("https://twitter.com/") do
             %i.fab.fa-twitter-square.my-white.fa-2x
           .footer-nav-NavLeft-SnsLogo--facebook
-          %a{href: "#"}
+          = link_to ("https://ja-jp.facebook.com/") do
             %i.fab.fa-facebook-square.my-white.fa-2x
       .footer-nav-NavRight
         %h2 ヘルプ&ガイド
@@ -740,7 +731,6 @@
           %li United States
 
     .footer-nav--Botlogo
-      = image_tag src="/assets/merukari-bottom-logo.svg",size: '124x33'
-      %a{ href: 'http://google.co.jp', id: 'top-page-top' }
+      = link_to(image_tag('merukari-bottom-logo.svg', size: '124x33', border: 0), 'http://www.yahoo.co.jp', popup: true)
 
       %p.footer-nav--Botlogo__Coop © 2019 Mercari
