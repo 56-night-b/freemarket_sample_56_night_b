@@ -243,10 +243,14 @@
     font-size: 13px;
   }
 }
+.footer.gray{
+  background-color: #f5f5f5;
+  width: 50%;
+  margin: 0 auto;
+}
 
 // ここからsign_up1
 body{
-  // background-color: #f5f5f5;
   .header-stage{              //ここがheader
     margin-left: 10%;
     display: flex;
@@ -288,7 +292,7 @@ body{
 
   // ここから会員情報入力
   .main1{
-    width: 50%;
+    width: 80%;
     margin: 0 auto;
     padding-bottom: 50px;
     background-color: #fff;
@@ -397,9 +401,17 @@ body{
       }
     }
   }
+  .main1.to-sign_up3{
+    width: 50%;
+  }
+}
+// .sign_up3ページのbodyの全体的な色
+body.sign_up3{
+  background-color: #fff;
 }
 // ここからsign_up3
 .header2{
+  background-color: #f5f5f5;
   width: 50%;
   margin: 0 auto;
   .h-top{
