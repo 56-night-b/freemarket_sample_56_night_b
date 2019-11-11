@@ -61,8 +61,13 @@ class UsersController < ApplicationController
     session[:building_name] = params[:building_name]
     session[:phone_number] = params[:phone_number]
     @address = Address.new # 新規インスタンス作成
+    @card = Card.new
   end
 
   def done
+    session[:card_number] = params[:card_number]
+    session[:expiration_date] = params[:expiration_date]
+    session[:securitycord] = params[:securitycord]
+    @card = Card.new
   end
 end

@@ -48,26 +48,30 @@
       = form_for @user, url:sign_up2_users_path, method: :get do |f|
         .field
           .field-input
-            .field-input__label
-              = f.label :nickname,"ニックネーム"
+            .label2
+              .field-input__label
+                = f.label :nickname,"ニックネーム"
               .required-box 必須
             .field-input__text
               = f.text_field :nickname, placeholder: '例) メルカリ太郎',size:30
           .field-input
-            .field-input__label
-              = f.label :email,"メールアドレス"
+            .label2
+              .field-input__label
+                = f.label :email,"メールアドレス"
               .required-box 必須
             .field-input__text
               = f.email_field :email, autofocus: true,placeholder: 'info@mail.jp' ,size:30
           .field-input
-            .field-input__label
-              = f.label :password,"パスワード"
+            .label2
+              .field-input__label
+                = f.label :password,"パスワード"
               .required-box 必須
             .field-input__text
               = f.password_field :password, autocomplete: "off", placeholder: '12345678',size:30
           .field-input
-            .field-input__label
-              = f.label :password_confirmation, 'パスワード(確認)'
+            .label2
+              .field-input__label
+                = f.label :password_confirmation, 'パスワード(確認)'
               .required-box 必須
             .field-input__text
               = f.password_field :password_confirmation, class: 'form-control', placeholder: '12345678',size:30

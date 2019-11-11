@@ -47,54 +47,62 @@
       = form_for @address, url:sign_up4_users_path, method: :get do |f|
         .field
           .field-input
-            .field-input__label
-              = f.label :name_kanji,"お名前"
+            .label2
+              .field-input__label
+                = f.label :name_kanji,"お名前"
               .required-box 必須
             .field-input__text
               = f.text_field :name_kanji, placeholder: '例）山田',size:30
             .field-input__text
               = f.text_field :name_kanji, placeholder: '例）花子',size:30
           .field-input
-            .field-input__label
-              = f.label :name_kana,"お名前カナ"
+            .label2
+              .field-input__label
+                = f.label :name_kana,"お名前カナ"
               .required-box 必須
             .field-input__text
               = f.text_field :name_kana, autofocus: true,placeholder: '例）ヤマダ' ,size:30
             .field-input__text
               = f.text_field :name_kana, autofocus: true,placeholder: '例）ハナコ' ,size:30
           .field-input
-            .field-input__label
-              = f.label :postal_cord,"郵便番号"
+            .label2
+              .field-input__label
+                = f.label :postal_cord,"郵便番号"
               .required-box 必須
             .field-input__text
               = f.text_field :postal_cord, autofocus: true,placeholder: '例）123-4567' ,size:30
           .field-input
-            .field-input__label
-              = f.label :prefectures,"都道府県"
+            .label2
+              .field-input__label
+                = f.label :prefectures,"都道府県"
               .required-box 必須
             .field-input__text
               = f.text_field :prefectures, autofocus: true,placeholder: '例）愛知県' ,size:30
           .field-input
-            .field-input__label
-              = f.label :municipalities,"市町村"
+            .label2
+              .field-input__label
+                = f.label :municipalities,"市町村"
               .required-box 必須
             .field-input__text
               = f.text_field :municipalities, autofocus: true,placeholder: '例）名古屋市' ,size:30
           .field-input
-            .field-input__label
-              = f.label :house_number,"番地"
+            .label2
+              .field-input__label
+                = f.label :house_number,"番地"
               .required-box 必須
             .field-input__text
               = f.text_field :house_number, autofocus: true,placeholder: '例）１番地' ,size:30
           .field-input
-            .field-input__label
-              = f.label :building_name,"建物名"
+            .label2
+              .field-input__label
+                = f.label :building_name,"建物名"
               .required-box 必須
             .field-input__text
               = f.text_field :building_name, autofocus: true,placeholder: '例）名古屋タワー' ,size:30
           .field-input
-            .field-input__label
-              = f.label :phone_number,"電話番号"
+            .label2
+              .field-input__label
+                = f.label :phone_number,"電話番号"
               .required-box 必須
             .field-input__text
               = f.text_field :phone_number, autofocus: true,placeholder: '例)08012345678' ,size:30

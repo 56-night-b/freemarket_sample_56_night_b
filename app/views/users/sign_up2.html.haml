@@ -49,8 +49,9 @@
       = form_for @user, url:sign_up3_users_path, method: :get do |f|
         .field
           .field-input
-            .field-input__label
-              = f.label :phone_number,"電話番号"
+            .label2
+              .field-input__label
+                = f.label :phone_number,"電話番号"
             .field-input__text
               = f.number_field :phone_number, placeholder:'携帯電話の番号を入力',size:30
             %p 本人確認のため、携帯電話のSNS(ショートメッセージサービス)を利用して認証を行います。
@@ -59,7 +60,7 @@
             = f.submit "SNSを送信する", class: 'btn1'
             %p 電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
       .num-reason
-        %a{href:"https://www.mercari.com/jp/"}
+        %a{href:"https://www.mercari.com/jp/help_center/article/244/"}
           %p 電話番号の確認が必要な理由
           %i.fas.fa-angle-right
   .footer
