@@ -15,11 +15,11 @@ Rails.application.routes.draw do
  
   resources :users do
     collection do
-      get 'sign_up1'
-      get 'sign_up2'
-      get 'sign_up3'
-      get 'sign_up4'
-      get 'sign_up5'
+      get 'sign_up1' => 'users#sign_up1'
+      get 'sign_up2' => 'users#sign_up2'
+      get 'sign_up3' => 'users#sign_up3'
+      get 'sign_up4' => 'users#sign_up4'
+      get 'sign_up5' => 'users#sign_up5'
       get 'done'
     end
   end

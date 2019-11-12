@@ -9,10 +9,9 @@
     }
   }
 
-%body{bkcolor:"#f5f5f5"}
+%body
   .header
-    %a{href:"https://www.mercari.com/jp/"}
-      %img{:alt => "mercari", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?465897195"}/
+    = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?465897195",alt:"mercari"), "https://www.mercari.com/jp/"
   #account-page.account-page
     .account-page__inner.clearfix
       .account-page__inner--first
@@ -26,7 +25,7 @@
             Facebookでログイン
           %br
           %button.google{href:"https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=238694260676-l0gp5j3hs9p8l2hjmnt126q0b4iin34r.apps.googleusercontent.com&as=7pB9qrcMwMh_g9yCSlP-YA&destination=https%3A%2F%2Fwww.mercari.com&approval_state=!ChRUUURjTEhNallvMF92WExaa0ZGXxIfSTRjS3NLUEVjWXdmNEJxcmlYbTVkb2xTcEZBUTRSWQ%E2%88%99AJDr988AAAAAXbfZ9YOxVq__-HGE7Un2St_kx6Uu4Hh9&oauthgdpr=1&xsrfsig=ChkAeAh8TyEVy9RxGPZND6qHfNJQMK52yLKHEg5hcHByb3ZhbF9zdGF0ZRILZGVzdGluYXRpb24SBXNvYWN1Eg9vYXV0aHJpc2t5c2NvcGU&flowName=GeneralOAuthFlow"}
-            %img{src:"/assets/google.logo.png", width:"20"}
+            = image_tag "/assets/google.logo.png"
             Googleでログイン
 
         = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
@@ -40,23 +39,18 @@
             .actions
               = f.submit "ログイン", class: 'btn'
         .forget-pass
-          %a{href:"https://www.mercari.com/jp/password/reset/start/"}
-            パスワードを忘れた方
+          = link_to "パスワードを忘れた方","https://www.mercari.com/jp/password/reset/start/"
 
   .footer
     %ul
       %li
-        %a{:href => "https://www.mercari.com/jp/privacy/"}
-          プライバシーポリシー
+        = link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
       %li
-        %a{:href => "https://www.mercari.com/jp/tos/"}
-          メルカリ利用規約
+        = link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/"
       %li
-        %a{:href => "https://www.mercari.com/jp/tokutei/"}
-          特定商取引に関する表記
+        = link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
     %br
     %br
-    %a.single-footer-logo{:href => "https://www.mercari.com/jp/"}
-      %img{src:"/assets/logo-gray.svg"}
+    = link_to image_tag("/assets/logo-gray.svg"), "https://www.mercari.com/jp/",{class:"single-footer-logo"}
     .footer__bottom
       %p © 2019 Mercari

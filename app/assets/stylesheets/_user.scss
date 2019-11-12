@@ -11,13 +11,13 @@
   }
 }
 .account-page {
-  .account-page__inner {
+  &__inner {
     width: 500px;
     margin: 0 auto;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
-    .account-page__inner--first{
+    &--first{
       text-align: center;
       padding: 24px 32px;
       border-bottom: 1px solid #f5f5f5;
@@ -37,7 +37,7 @@
         }
       }
     }
-    .account-page__inner--second {
+    &--second {
       margin: 0 auto;
       text-align: center;
       &--login-form{
