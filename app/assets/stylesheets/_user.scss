@@ -193,6 +193,7 @@
   }
 }
 
+// doneのheaderの上の画像部分
 .top-footer{
   color: #fff;
   text-align: center;
@@ -206,9 +207,10 @@
   }
   .middle-app-google{
     display: flex;
-    margin: 0 26%;
+    padding: 0 5%;
     img{
       margin: 0 1%;
+      width: 50%;
     }
   }
   img.smart-phone{
@@ -251,6 +253,7 @@
 
 // ここからsign_up1
 body{
+  background-color: #f5f5f5;
   .header-stage{              //ここがheader
     margin-left: 10%;
     display: flex;
@@ -277,12 +280,28 @@ body{
           li{
             font-size: 12px;
             margin: 0 auto;
+            font.red{
+              color: #ff0000;
+            }
+            font.gray{
+              color: #bbbbbb;
+            }
             .box{
               float: right;
               width: 92px;
               position: relative;
               top: -16px;
               left: 46px;
+              hr{
+                border: none;
+                height: 2px;
+              }
+              hr.red{
+                background-color: #ff0000;
+              }
+              hr.gray{
+                background-color: #bbbbbb;
+              }
             }
           }
         }
@@ -309,23 +328,23 @@ body{
       .field{
         .field-input{
           margin: 20px 0;
-            .label2{
-              display: flex;
-              justify-content: flex-start;
-              .field-input__label{
-                font-size: 14px;
-                margin: 0 0 5px 25%;
-                font-weight: bold;
-              }
-              .required-box{
-                margin: 0 0 1% 3%;
-                background-color: red;
-                border-radius: 10%;
-                padding: 0 5px;
-                color: #fff;
-                font-weight: 100;
-              }
+          .label2{
+            display: flex;
+            justify-content: flex-start;
+            .field-input__label{
+              font-size: 14px;
+              margin: 0 0 5px 25%;
+              font-weight: bold;
             }
+            .required-box{
+              margin: 0 0 1% 3%;
+              background-color: red;
+              border-radius: 10%;
+              padding: 0 5px;
+              color: #fff;
+              font-weight: 100;
+            }
+          }
           &__text{
             padding: 0 25%;
             font-size: 14px;
@@ -333,6 +352,9 @@ body{
               width: 97%;
               height: 40px;
               padding-left: 2%;
+            }
+            img{
+              width: 12.5%;
             }
             select{
               height: 40px;
@@ -433,11 +455,27 @@ body.sign_up3{
         width: 20%;
         font-size: 10px;
         li{
+          font.red{
+            color: #ff0000;
+          }
+          font.gray{
+            color: #bbbbbb;
+          }
           .box{
             width: 95%;
             position: relative;
             top: -14px;
             left: 53%;
+            hr{
+              border: none;
+              height: 2px;
+            }
+            hr.red{
+              background-color: #ff0000;
+            }
+            hr.gray{
+              background-color: #bbbbbb;
+            }
           }
         }
       }

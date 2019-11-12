@@ -2,42 +2,41 @@
 %body.sign_up3
   .header2.sign_up3
     .h-top
-      %a{href:"https://master.tech-camp.in/"}
-        %img{alt:"mercari", src:"//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?465897195"}/
+      = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?465897195",alt:"mercari"), "https://master.tech-camp.in/"
     .h-buttom
       %ul
         .dankai-box
           %li
-            %font{color:"#ff0000"}会員情報
-            %font{color:"#ff0000"}
+            %font.red 会員情報
+            %font.red 
               .maru1 ●
             .box
-              %hr{color:"#ff0000"}
+              %hr.red 
         .dankai-box
           %li
-            %font{color:"#ff0000"}電話番号認証
-            %font{color:"#ff0000"}
+            %font.red 電話番号認証
+            %font.red 
               .maru1 ●
             .box
-              %hr{color:"#ff0000"}
+              %hr.red 
         .dankai-box
           %li
-            %font{color:"#ff0000"}住所入力
-            %font{color:"#ff0000"}
+            %font.red 住所入力
+            %font.red 
               .maru1 ●
             .box
-              %hr{color:"#ff0000"}
+              %hr.red 
         .dankai-box
           %li
-            %font{color:"#ff0000"}支払い方法
-            %font{color:"#ff0000"}
+            %font.red 支払い方法
+            %font.red 
               .maru1 ●
             .box
-              %hr{color:"#ff0000"}
+              %hr.red 
         .dankai-box
           %li
-            %font{color:"#ff0000"}完了
-            %font{color:"#ff0000"}
+            %font.red 完了
+            %font.red 
               .maru1 ●
   
   .main1.to-sign_up3
@@ -51,23 +50,19 @@
     %p \　スマホでかんたんフリマアプリ　/
     %h3 今すぐ無料ダウンロード！
     .middle-app-google
-      %img{src:"https://www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?2651893653"}
-      %img{src:"https://www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?2651893653"}
-    %img.smart-phone{src:"/assets/download_content_pc.png"}
+      = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?2651893653"
+      = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?2651893653"
+    = image_tag "/assets/download_content_pc.png",{class:"smart-phone"}
   .footer.gray
     %ul
       %li
-        %a{:href => "https://www.mercari.com/jp/privacy/"}
-          プライバシーポリシー
+        = link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
       %li
-        %a{:href => "https://www.mercari.com/jp/tos/"}
-          メルカリ利用規約
+        = link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/"
       %li
-        %a{:href => "https://www.mercari.com/jp/tokutei/"}
-          特定商取引に関する表記
+        = link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
     %br
     %br
-    %a.single-footer-logo{:href => "https://www.mercari.com/jp/"}
-      %img{src:"/assets/logo-gray.svg"}
+    = link_to image_tag("/assets/logo-gray.svg"), "https://www.mercari.com/jp/",{class:"single-footer-logo"}
     .footer__bottom
       %p © 2019 Mercari
