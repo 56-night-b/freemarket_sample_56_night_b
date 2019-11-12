@@ -1,0 +1,93 @@
+%head
+  %script{:async => "", :defer => "defer", :src => "https://www.google.com/recaptcha/api.js"}
+%body
+  .header-stage
+    .h-left
+      = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?465897195",alt:"mercari"), "https://master.tech-camp.in/"
+    .h-right
+      %ul
+        .dankai-box
+          %li
+            %font.red 会員情報
+            %font.red
+              .maru1 ●
+            .box
+              %hr.gray
+        .dankai-box
+          %li
+            %font.gray 電話番号認証
+            %font.gray 
+              .maru1 ●
+            .box
+              %hr.gray 
+        .dankai-box
+          %li
+            %font.gray 住所入力
+            %font.gray 
+              .maru1 ●
+            .box
+              %hr.gray 
+        .dankai-box
+          %li
+            %font.gray 支払い方法
+            %font.gray 
+              .maru1 ●
+            .box
+              %hr.gray 
+        .dankai-box
+          %li
+            %font.gray 完了
+            %font.gray 
+              .maru1 ●
+  
+  .main1
+    .main1__toptext
+      会員情報入力
+    .main1__buttomtext
+      = form_for @user, url:sign_up_tel_number_users_path, method: :get do |f|
+        .field
+          .field-input
+            .label2
+              .field-input__label
+                = f.label :nickname,"ニックネーム"
+              .required-box 必須
+            .field-input__text
+              = f.text_field :nickname, placeholder: '例) メルカリ太郎',size:30
+          .field-input
+            .label2
+              .field-input__label
+                = f.label :email,"メールアドレス"
+              .required-box 必須
+            .field-input__text
+              = f.email_field :email, autofocus: true,placeholder: 'info@mail.jp' ,size:30
+          .field-input
+            .label2
+              .field-input__label
+                = f.label :password,"パスワード"
+              .required-box 必須
+            .field-input__text
+              = f.password_field :password, autocomplete: "off", placeholder: '12345678',size:30
+          .field-input
+            .label2
+              .field-input__label
+                = f.label :password_confirmation, 'パスワード(確認)'
+              .required-box 必須
+            .field-input__text
+              = f.password_field :password_confirmation, class: 'form-control', placeholder: '12345678',size:30
+          .field-input
+            .g-recaptcha{"data-callback" => "validateRecaptcha", "data-sitekey" => "6Le0x78UAAAAALn6klXFzUR91sbFx0_jSxtaCVHJ"}
+          .actions
+            = f.submit "次に進む", class: 'btn1'
+  .footer
+    %ul
+      %li
+        = link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
+      %li
+        = link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/"
+      %li
+        = link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
+    %br
+    %br
+    = link_to image_tag("/assets/logo-gray.svg"), "https://www.mercari.com/jp/"
+    .footer__bottom
+      %p © 2019 Mercari

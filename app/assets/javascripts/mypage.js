@@ -1,3 +1,9 @@
+let btn = document.getElementById("button");
+
+btn.addEventListener("click", function() {
+  window.location.reload();
+});
+
 window.addEventListener("load", function() {
   // タブのDOM要素を取得し、変数で定義
   let tabs = $(".main__user_tabs--menu");
