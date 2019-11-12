@@ -33,11 +33,11 @@ class UsersController < ApplicationController
   def reviews
   end
 
-  def sign_up1
+  def sign_up_memberinfo
     @user = User.new
   end
 
-  def sign_up2
+  def sign_up_tel_number
     session[:nickname] = params[:nickname]
     session[:email] = params[:email]
     session[:password] = params[:password]
@@ -45,13 +45,13 @@ class UsersController < ApplicationController
     @user = User.new # 新規インスタンス作成
   end
 
-  def sign_up3
+  def sign_up_address
     session[:phone_number] = params[:phone_number]
     @user = User.new # 新規インスタンス作成
     @address = Address.new # 新規インスタンス作成
   end
 
-  def sign_up4
+  def sign_up_payment
     session[:name_kanji] = params[:name_kanji]
     session[:name_kana] = params[:name_kana]
     session[:postal_cord] = params[:postal_cord]
@@ -64,7 +64,7 @@ class UsersController < ApplicationController
     @card = Card.new
   end
 
-  def done
+  def sign_up_done
     session[:card_number] = params[:card_number]
     session[:expiration_date] = params[:expiration_date]
     session[:securitycord] = params[:securitycord]
