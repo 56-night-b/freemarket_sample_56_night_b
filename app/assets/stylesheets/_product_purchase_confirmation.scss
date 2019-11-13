@@ -1,0 +1,33 @@
+body{
+  .header-pp-confirmation{
+    a{
+      img{
+        display: block;
+        width: 14%;
+        margin: 2% auto;
+      }
+    }
+  }
+  .main-pp-confirmation{
+    width: 60%;
+    background-color: #fff;
+    margin: 0 auto;
+    &__top{
+      text-align: center;
+      padding: 2% 0 ;
+      border: 1px solid #f5f5f5;
+      p{
+        font-size: 21px;
+        font-weight: bold;
+      }
+    }
+    &__buttom{
+      margin: 0 0 20% 30%;
+      padding: 5% 0;
+      a{
+        color: #0099e8;
+        font-size: 14px;
+      }
+    }
+  }
+}
