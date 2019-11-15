@@ -13,8 +13,8 @@
           .main
             .main__user_icon
               %figure
-                %img{src:"/assets/member_photo_noimage_thumb.png"}
-              %h2.main__user_icon--name
+                = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png"
+              .main__user_icon--name
                 user
               .main__user_icon--number
                 %div
@@ -36,7 +36,7 @@
               %li.contents__mainlist.show
                 %ul
                   %li
-                    %img{src: "/assets/mercari_profile.png"}
+                    = image_tag "https://static.mercdn.net/images/mercari_profile.png"
                     .main__contents--box
                       %p
                         事務所から個別メッセージ「ログイン通知」
@@ -44,7 +44,7 @@
                       %time
                         30分前
                   %li
-                    %img{src: "/assets/mercari_profile.png"}
+                    = image_tag "https://static.mercdn.net/images/mercari_profile.png"
                     .main__contents--box
                       %p
                         ３日後、P999還元クーポンの有効期限が切れます！タップして詳細を確認しましょう
@@ -52,7 +52,7 @@
                       %time
                         １時間前
                   %li
-                    %img{src: "/assets/mercari_profile.png"}
+                    = image_tag "https://static.mercdn.net/images/mercari_profile.png"
                     .main__contents--box
                       .main__contents--box-text
                         《ご登録記念》¥1000の商品を「実質１円」でご購入いただけます！
@@ -62,7 +62,7 @@
               %li.contents__mainlist
                 %ul
                   %li
-                    %img{src: "/assets/mercari_profile.png"}
+                    = image_tag "https://static.mercdn.net/images/mercari_profile.png"
                     .main__contents--box
                       .main__contents--box-text
                         ご登録のメールアドレスに認証メールを送ろました。メールに記載のURLをクリックして、メールアドレスを認証してください
@@ -86,14 +86,15 @@
               %li.contents2__mainlist2.show2
                 %ul
                   %li
-                    .massage--box
+                    .massage--box1
+                      .bgcolor-box
                       %p
                         取引中の商品はありません
 
               %li.contents2__mainlist2
                 %ul
                   %li
-                    %img{src: "/assets/mercari_profile.png"}
+                    = image_tag "https://static.mercdn.net/images/mercari_profile.png"
                     .contents2__mainlist2--box2
                       %p
                         ご登録のメールアドレスに認証メールを送ろました。メールに記載のURLをクリックして、メールアドレスを認証してください
