@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   get 'users/mypage/buy_products/transacted' => 'users#buy_transacted'
   get 'users/mypage/news' => 'users#news'
   get 'users/mypage/reviews' => 'users#reviews'
- 
+
+  get 'users/mypage/profile' => 'users#profile'
+
   resources :users do
     collection do
       get 'sign_up_memberinfo' 

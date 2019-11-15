@@ -33,6 +33,9 @@ class UsersController < ApplicationController
   def reviews
   end
 
+  def profile
+  end
+
   def sign_up_memberinfo
     @user = User.new
   end

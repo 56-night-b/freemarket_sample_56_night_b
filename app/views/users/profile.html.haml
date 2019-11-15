@@ -1,0 +1,17 @@
+.profile-whole
+  .profile-container
+    .profile-main_box
+      .profile-main
+        .profile-main__title
+          %h3
+            プロフィール
+        .profile-main__user_icon
+          .profile-main__user_icon--box
+            %figure
+              = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png"
+            %input{type:"text",value:"太郎さん",name:"nickname", placeholder:"例)AYA☆セール中", class:"input-default"}
+        .profile-main__content
+          %textarea.textarea-default{name:"introduction",placeholder:"例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
+          %button.profile-btn.btn-red{type:"submit"} 変更する
+
+    = render partial: 'sidber'
