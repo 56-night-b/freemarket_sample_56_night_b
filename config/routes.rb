@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'users/mypage/reviews' => 'users#reviews'
 
   get 'users/mypage/profile' => 'users#profile'
+  get 'users/mypage/card' => 'users#card'
 
   resources :users do
     collection do
