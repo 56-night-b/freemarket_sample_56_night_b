@@ -11,7 +11,7 @@
 
       .account-page__inner--second.user-form
         .account-page__inner--second--login-form
-          %button.mail-login{onclick:"location.href='http://localhost:3000/users/sign_up_memberinfo'",type:"“button”"}
+          %button.mail-login{onclick:"location.href='http://18.179.104.79/users/sign_up_memberinfo'",type:"“button”"}
             %i.far.fa-envelope.fa-2x{color:"#fff"}
             メールアドレスで登録する
           %br
@@ -20,7 +20,7 @@
             Facebookで登録する
           %br
           %button.google{onclick:"location.href='https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=238694260676-l0gp5j3hs9p8l2hjmnt126q0b4iin34r.apps.googleusercontent.com&as=7pB9qrcMwMh_g9yCSlP-YA&destination=https%3A%2F%2Fwww.mercari.com&approval_state=!ChRUUURjTEhNallvMF92WExaa0ZGXxIfSTRjS3NLUEVjWXdmNEJxcmlYbTVkb2xTcEZBUTRSWQ%E2%88%99AJDr988AAAAAXbfZ9YOxVq__-HGE7Un2St_kx6Uu4Hh9&oauthgdpr=1&xsrfsig=ChkAeAh8TyEVy9RxGPZND6qHfNJQMK52yLKHEg5hcHByb3ZhbF9zdGF0ZRILZGVzdGluYXRpb24SBXNvYWN1Eg9vYXV0aHJpc2t5c2NvcGU&flowName=GeneralOAuthFlow'",type:"“button”"}
-            = image_tag "/assets/google.logo.png"
+            = image_tag "https://www.mercari.com/jp/assets/img/common/common/google.svg"
             Googleで登録する
   .footer
     %ul
@@ -32,6 +32,6 @@
         = link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
     %br
     %br
-    = link_to image_tag("/assets/logo-gray.svg"), "https://www.mercari.com/jp/",{class:"single-footer-logo"}
+    = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?210491352"), "https://www.mercari.com/jp/",{class:"single-footer-logo"}
     .footer__bottom
       %p © 2019 Mercari

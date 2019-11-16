@@ -82,7 +82,7 @@
         }
         img{
           vertical-align: middle;
-          margin: 0 25% 0 2%;
+          margin: 0 25% 0 0;
         }
       }
       .field {
@@ -481,4 +481,8 @@ body.sign_up3{
       }
     }
   }
+}
+
+.sign-up-btn{ //sign-upのsubmitボタン
+  height: 48px;
 }

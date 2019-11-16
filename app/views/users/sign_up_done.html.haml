@@ -45,24 +45,13 @@
     .main1__buttomtext
       %p.kan ありがとうございます。
       %p.kan 会員登録が完了しました。
-      %button.back-home{onclick:"location.href='http://localhost:3000/users/mypage'",type:"“button”"}メルカリをはじめる
+      %button.back-home{onclick:"location.href='http://18.179.104.79/users/mypage'",type:"“button”"}メルカリをはじめる
   .top-footer
     %p \　スマホでかんたんフリマアプリ　/
     %h3 今すぐ無料ダウンロード！
     .middle-app-google
       = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?2651893653"
       = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?2651893653"
-    = image_tag "/assets/download_content_pc.png",{class:"smart-phone"}
-  .footer.gray
-    %ul
-      %li
-        = link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
-      %li
-        = link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/"
-      %li
-        = link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
-    %br
-    %br
-    = link_to image_tag("/assets/logo-gray.svg"), "https://www.mercari.com/jp/",{class:"single-footer-logo"}
-    .footer__bottom
-      %p © 2019 Mercari
+    = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/download_app_pc-a4418175e8be071827ac88d073f40e4a.png",{class:"smart-phone"}
+  
+  = render partial: "sign-up-footer-gray"
