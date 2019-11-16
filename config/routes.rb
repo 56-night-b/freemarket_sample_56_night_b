@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'users/mypage/buy_products/transacted' => 'users#buy_transacted'
   get 'users/mypage/news' => 'users#news'
   get 'users/mypage/reviews' => 'users#reviews'
+  get 'logout' => 'users#logout'
   # resources :users, only: :show
   resources :main
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

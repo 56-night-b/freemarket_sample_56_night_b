@@ -32,4 +32,7 @@ class UsersController < ApplicationController
 
   def reviews
   end
+
+  def logout
+  end
 end
