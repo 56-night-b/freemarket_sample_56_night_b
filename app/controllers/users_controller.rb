@@ -36,6 +36,9 @@ class UsersController < ApplicationController
   def profile
   end
 
+  def card
+  end
+
   def sign_up_memberinfo
     @user = User.new
   end
