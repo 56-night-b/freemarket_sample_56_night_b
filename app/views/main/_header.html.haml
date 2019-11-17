@@ -1,0 +1,38 @@
+%header
+  .HeaderContents
+    .HeaderContents-HeaderTopSide
+      .HeaderContents-HeaderTopSide--TopLogo
+      = link_to(image_tag('merukari-header-logo.svg', size: '136x36', border: 0), 'http://www.yahoo.co.jp', popup: true)
+
+        
+      .HeaderContents-HeaderTopSide--form
+        %form.HeaderContents-HeaderTopSide--form1{action: "自分のサイトURL", method: "get"}
+          %input.HeaderContents-HeaderTopSide--box1{name: " ", placeholder: "何かお探しですか？", type: "text"}/
+          %button.btn{type: "submit"}
+            %i.fas.fa-search
+
+
+            
+    .HeaderContentsHeaderBottomSide
+      .HeaderContentsHeaderBottomSide-BottomLeft
+        .HeaderContentsHeaderBottomSide-BottomLeft__category
+          %i.fas.fa-list-ul.my-red
+          = link_to("カテゴリーから探す", "http://google.co.jp") 
+        .HeaderContentsHeaderBottomSide-BottomLeft__brand
+          %i.fas.fa-tags.my-red
+          = link_to("ブランドから探す", "http://google.co.jp")
+      .HeaderContentsHeaderBottomSide-BottomRight
+        %ul.HeaderContentsHeaderBottomSide-BottomRight__UserContents
+          %li.HeaderContentsHeaderBottomSide-BottomRight__UserContents-like
+            %i.far.fa-heart
+            = link_to("いいね一覧", "http://google.co.jp")
+          %li.HeaderContentsHeaderBottomSide-BottomRight__UserContents-news
+            %i.far.fa-bell
+            = link_to("お知らせ", "http://google.co.jp")
+          %li.HeaderContentsHeaderBottomSide-BottomRight__UserContents-todo
+            %i.fas.fa-check
+            = link_to("やることリスト", "http://google.co.jp")
+          %li.HeaderContentsHeaderBottomSide-BottomRight__UserContents-mypage
+            = image_tag src="https://static.mercdn.net/images/member_photo_noimage_thumb.png",size: '32x32',class: "mypage-image"
+            %p#mypage
+              = link_to("マイページ", "http://google.co.jp")
