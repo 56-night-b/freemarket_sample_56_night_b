@@ -1,0 +1,56 @@
+%head
+  %link{rel: "stylesheet", href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css"}
+  %script{:async => "", :defer => "defer", :src => "https://www.google.com/recaptcha/api.js"}
+:javascript
+  function validateRecaptcha ( code ) {
+    if ( !!code ) {
+      var form = document.querySelector(".recaptcha");
+      form.removeAttribute('disabled');
+    }
+  }
+
+%body
+  .header
+    = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?465897195",alt:"mercari"), "https://www.mercari.com/jp/"
+  #account-page.account-page
+    .account-page__inner.clearfix
+      .account-page__inner--first
+        アカウントをお持ちでない方はこちら
+        .account-page__inner--sign-up
+          = link_to "新規会員登録", new_user_registration_path
+      .account-page__inner--second.user-form
+        .account-page__inner--second--login-form
+          %button.facebook{href:"https://www.facebook.com/login.php?skip_api_login=1&api_key=466308336793848&kid_directed_site=0&app_id=466308336793848&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv2.5%2Fdialog%2Foauth%3Fapp_id%3D466308336793848%26channel_url%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fconnect%252Fxd_arbiter.php%253Fversion%253D44%2523cb%253Df18cdd8ace77a5%2526domain%253Dwww.mercari.com%2526origin%253Dhttps%25253A%25252F%25252Fwww.mercari.com%25252Ff318c2251fbd4b%2526relation%253Dopener%26client_id%3D466308336793848%26display%3Dpopup%26domain%3Dwww.mercari.com%26e2e%3D%257B%257D%26fallback_redirect_uri%3Dhttps%253A%252F%252Fwww.mercari.com%252Fjp%252Flogin%252F%26locale%3Den_US%26origin%3D1%26redirect_uri%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fconnect%252Fxd_arbiter.php%253Fversion%253D44%2523cb%253Df9767dd0514054%2526domain%253Dwww.mercari.com%2526origin%253Dhttps%25253A%25252F%25252Fwww.mercari.com%25252Ff318c2251fbd4b%2526relation%253Dopener%2526frame%253Df7c81f082187fc%26response_type%3Dtoken%252Csigned_request%26scope%3Dpublic_profile%252Cemail%252Cuser_friends%26sdk%3Djoey%26version%3Dv2.5%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3Dda034994-3261-4940-aa64-c17cb9407c85&cancel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D44%23cb%3Df9767dd0514054%26domain%3Dwww.mercari.com%26origin%3Dhttps%253A%252F%252Fwww.mercari.com%252Ff318c2251fbd4b%26relation%3Dopener%26frame%3Df7c81f082187fc%26error%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied&display=popup&locale=en_US"}
+            %i.fab.fa-facebook-square.fa-2x
+            Facebookでログイン
+          %br
+          %button.google{href:"https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=238694260676-l0gp5j3hs9p8l2hjmnt126q0b4iin34r.apps.googleusercontent.com&as=7pB9qrcMwMh_g9yCSlP-YA&destination=https%3A%2F%2Fwww.mercari.com&approval_state=!ChRUUURjTEhNallvMF92WExaa0ZGXxIfSTRjS3NLUEVjWXdmNEJxcmlYbTVkb2xTcEZBUTRSWQ%E2%88%99AJDr988AAAAAXbfZ9YOxVq__-HGE7Un2St_kx6Uu4Hh9&oauthgdpr=1&xsrfsig=ChkAeAh8TyEVy9RxGPZND6qHfNJQMK52yLKHEg5hcHByb3ZhbF9zdGF0ZRILZGVzdGluYXRpb24SBXNvYWN1Eg9vYXV0aHJpc2t5c2NvcGU&flowName=GeneralOAuthFlow"}
+            = image_tag "https://www.mercari.com/jp/assets/img/common/common/google.svg"
+            Googleでログイン
+
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .field
+            .field-input
+              = f.email_field :email, autofocus: true
+            .field-input
+              = f.password_field :password, autocomplete: "off"
+            .field-input
+              .g-recaptcha{"data-callback" => "validateRecaptcha", "data-sitekey" => "6Le0x78UAAAAALn6klXFzUR91sbFx0_jSxtaCVHJ"}
+            .actions
+              = f.submit "ログイン", class: 'sign-up-btn'
+        .forget-pass
+          = link_to "パスワードを忘れた方","https://www.mercari.com/jp/password/reset/start/"
+
+  .footer
+    %ul
+      %li
+        = link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
+      %li
+        = link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/"
+      %li
+        = link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
+    %br
+    %br
+    = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?210491352"),"https://www.mercari.com/jp/"
+    .footer__bottom
+      %p © 2019 Mercari

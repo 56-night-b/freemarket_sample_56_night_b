@@ -13,15 +13,15 @@
               %h2
                 出品した商品
             %ul.sell_product__tabs
-              %a{href:"http://localhost:3000/users/mypage/selling"}
+              = link_to "http://localhost:3000/users/mypage/selling" do
                 %li.sell_product__tabs--menu.active2
                   %h3
                     出品中
-              %a{href:"http://localhost:3000/users/mypage/transacting"}
+              = link_to "http://localhost:3000/users/mypage/transacting" do
                 %li.sell_product__tabs--menu
                   %h3
                     取引中
-              %a{href:"http://localhost:3000/users/mypage/sold"}
+              = link_to "http://localhost:3000/users/mypage/sold" do
                 %li.sell_product__tabs--menu
                   %h3
                     売却済み
@@ -31,6 +31,7 @@
                 %ul
                   %li
                     .massage--box
+                      .bgcolor-box9
                       %p
                         取引中の商品はありません
 

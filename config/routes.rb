@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root :to => 'main#index'
   get 'users/mypage' => 'users#mypage'
   get 'users/mypage/notice' => 'users#notice'
@@ -12,7 +13,24 @@ Rails.application.routes.draw do
   get 'users/mypage/news' => 'users#news'
   get 'users/mypage/reviews' => 'users#reviews'
   get 'logout' => 'users#logout'
-  # resources :users, only: :show
-  resources :main
+  get 'users/mypage/profile' => 'users#profile'
+  get 'users/mypage/card' => 'users#card'
+
+  resources :users do
+    collection do
+      get 'sign_up_memberinfo' 
+      get 'sign_up_tel_number' 
+      get 'sign_up_address' 
+      get 'sign_up_payment' 
+      get 'sign_up_done'
+    end
+  end
+
+  resources :main do
+    collection do
+      get 'product_purchase_confirmation'
+    end
+  end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

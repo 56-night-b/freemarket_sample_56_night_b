@@ -30,6 +30,7 @@ a{
       padding-left: 4%; 
       h2{
         line-height: 72px;
+        color: #000;
       }
     }
     //tabの設定//
@@ -73,14 +74,20 @@ a{
             padding: 10px 0 0 0;
             border-bottom: 1px solid #f5f5f5;
             overflow: hidden;
-            .massage--box{
-              height: 236px;
-              background-image: url("/assets/f6c64e435ecb89cf94b0a61c2beda92b.png");
-              background-size: 700px;
+            .massage--box11{
+              height: 200px;
+              padding-top: 10%;
+              .bgcolor-box11{
+                background-image: url("https://www.mercari.com/jp/assets/img/common/common/logo-gray-icon.svg?97715232");
+                background-size: 100%;
+                width: 15%;
+                height: 55%;
+                margin: 0 auto;
+              }
               p{
                 font-size: 14px;
                 text-align: center;
-                line-height: 330px;
+                line-height: 90px;
                 color: rgb(200, 200, 200);
               }
             }
