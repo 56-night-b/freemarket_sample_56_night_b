@@ -76,4 +76,7 @@ class UsersController < ApplicationController
     session[:securitycord] = params[:securitycord]
     @card = Card.new
   end
+
+  def logout
+  end
 end

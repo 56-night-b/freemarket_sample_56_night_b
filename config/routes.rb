@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get 'users/mypage/buy_products/transacted' => 'users#buy_transacted'
   get 'users/mypage/news' => 'users#news'
   get 'users/mypage/reviews' => 'users#reviews'
-
+  get 'logout' => 'users#logout'
   get 'users/mypage/profile' => 'users#profile'
   get 'users/mypage/card' => 'users#card'
 
@@ -31,5 +31,6 @@ Rails.application.routes.draw do
       get 'product_purchase_confirmation'
     end
   end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
