@@ -39,6 +39,15 @@ class UsersController < ApplicationController
   def card
   end
 
+  def identification
+    session[:postal_cord] = params[:postal_cord]
+    session[:prefectures] = params[:prefectures]
+    session[:municipalities] = params[:municipalities]
+    session[:house_number] = params[:house_number]
+    session[:building_name] = params[:building_name]
+    @address = Address.new
+  end
+
   def sign_up_memberinfo
     @user = User.new
   end
