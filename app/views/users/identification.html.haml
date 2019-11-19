@@ -39,7 +39,9 @@
                       = f.label :prefectures,"都道府県"
                     .identification-required-box 任意
                   .identification-field-input__text
-                    = f.text_field :prefectures, autofocus: true,placeholder: '例）愛知県' ,size:30
+                    .identification-field-input__text--select1
+                      %i.fas.fa-chevron-down
+                      = f.select :prefectures, options_for_select(@prefectures.map{|c|[c[:name], c[:id]]}),{include_blank: true},{class:'select-prefectures'}
                 .identification-field-input
                   .identification-label
                     .identification-field-input__label
