@@ -1,0 +1,57 @@
+%head
+%body.sign_up3
+  .header2.sign_up3
+    .h-top
+      = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?465897195",alt:"mercari"), "https://master.tech-camp.in/"
+    .h-buttom
+      %ul
+        .dankai-box
+          %li
+            %font.red 会員情報
+            %font.red 
+              .maru1 ●
+            .box
+              %hr.red 
+        .dankai-box
+          %li
+            %font.red 電話番号認証
+            %font.red 
+              .maru1 ●
+            .box
+              %hr.red 
+        .dankai-box
+          %li
+            %font.red 住所入力
+            %font.red 
+              .maru1 ●
+            .box
+              %hr.red 
+        .dankai-box
+          %li
+            %font.red 支払い方法
+            %font.red 
+              .maru1 ●
+            .box
+              %hr.red 
+        .dankai-box
+          %li
+            %font.red 完了
+            %font.red 
+              .maru1 ●
+  
+  .main1.to-sign_up3
+    .main1__toptext
+      登録完了
+    .main1__buttomtext
+      %p.kan ありがとうございます。
+      %p.kan 会員登録が完了しました。
+      %button.back-home{onclick:"location.href='http://18.179.104.79/users/mypage'",type:"“button”"}メルカリをはじめる
+  .top-footer
+    %p \　スマホでかんたんフリマアプリ　/
+    %h3 今すぐ無料ダウンロード！
+    .middle-app-google
+      = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?2651893653"
+      = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?2651893653"
+    = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/download_app_pc-a4418175e8be071827ac88d073f40e4a.png",{class:"smart-phone"}
+  
+  = render partial: "sign-up-footer-gray"

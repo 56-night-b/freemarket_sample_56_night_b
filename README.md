@@ -29,8 +29,10 @@ Things you may want to cover:
 |nickname|string|null: false|
 |mail|string|null: false|
 |password|string|null: false|
-|name_kanji|string|null: false|
-|name_kana|string|null: false|
+|famliy_name_kanji|string|null: false|
+|first_name_name_kanji|string|null: false|
+|famliy_name_kana|string|null: false|
+|firstname_name_kana|string|null: false|
 |birthday|integer|null: false|
 |robot_y_n|string|null: false|
 |phone_number|string|null: false|

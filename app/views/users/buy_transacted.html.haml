@@ -13,11 +13,11 @@
               %h2
                 購入した商品
             %ul.buy_product__transactions
-              %a{href:"http://localhost:3000/users/mypage/buy_products/transacting"}
+              = link_to "http://localhost:3000/users/mypage/buy_products/transacting" do
                 %li.buy_product__transactions--menu
                   %h3
                     取引中
-              %a{href:"http://localhost:3000/users/mypage/buy_products/transacted"}
+              = link_to "http://localhost:3000/users/mypage/buy_products/transacted" do
                 %li.buy_product__transactions--menu.active2
                   %h3
                     過去の取引
@@ -27,13 +27,14 @@
                 %ul
                   %li
                     .massage--box
+                      .bgcolor-box1
                       %p
                         取引中の商品はありません
 
               %li.contents2__mainlist2.show2
                 %ul
                   %li
-                    %img{src: "/assets/mercari_profile.png"}
+                    = image_tag "https://static.mercdn.net/images/mercari_profile.png"
                     .contents2__mainlist2--box2
                       %p
                         ご登録のメールアドレスに認証メールを送ろました。メールに記載のURLをクリックして、メールアドレスを認証してください
