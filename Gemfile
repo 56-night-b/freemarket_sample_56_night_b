@@ -93,3 +93,5 @@ gem 'mini_magick'
 gem 'erb2haml'
 
 gem "recaptcha"
+
+gem 'active_hash'
