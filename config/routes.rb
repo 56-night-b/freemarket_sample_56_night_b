@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'logout' => 'users#logout'
   get 'users/mypage/profile' => 'users#profile'
   get 'users/mypage/card' => 'users#card'
+  get 'users/mypage/identification' => 'users#identification'
 
   resources :users do
     collection do
