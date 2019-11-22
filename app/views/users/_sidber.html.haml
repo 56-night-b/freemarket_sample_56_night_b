@@ -1,19 +1,19 @@
 .sid-ber
   .nav
     %ul.nav--list
-      = link_to "http://localhost:3000/users/mypage" do
+      = link_to users_mypage_path do
         %li.art
           = fa_icon 'chevron-right'
           マイページ
-      = link_to "http://localhost:3000/users/mypage/notice" do
+      = link_to users_mypage_notice_path do
         %li.art
           = fa_icon 'chevron-right'
           お知らせ
-      = link_to "http://localhost:3000/users/mypage/to_do" do
+      = link_to users_mypage_to_do_path do
         %li.art
           = fa_icon 'chevron-right'
           やることリスト
-      = link_to "http://localhost:3000/users/mypage/nice" do
+      = link_to users_mypage_nice_path do
         %li.art
           = fa_icon 'chevron-right'
           いいね！一覧
@@ -21,31 +21,31 @@
         %li.art
           = fa_icon 'chevron-right'
           出品する
-      = link_to "http://localhost:3000/users/mypage/selling" do
+      = link_to users_mypage_selling_path do
         %li.art
           = fa_icon 'chevron-right'
           出品した商品ー出品中
-      = link_to "http://localhost:3000/users/mypage/transacting" do
+      = link_to users_mypage_transacting_path do
         %li.art
           = fa_icon 'chevron-right'
           出品した商品ー取引中
-      = link_to "http://localhost:3000/users/mypage/sold" do
+      = link_to users_mypage_sold_path do
         %li.art
           = fa_icon 'chevron-right'
           出品した商品ー売却済み
-      = link_to "http://localhost:3000/users/mypage/buy_products/transacting" do
+      = link_to users_mypage_buy_products_transacting_path do
         %li.art
           = fa_icon 'chevron-right'
           購入した商品ー取引中
-      = link_to "http://localhost:3000/users/mypage/buy_products/transacted" do
+      = link_to users_mypage_buy_products_transacted_path do
         %li.art
           = fa_icon 'chevron-right'
           購入した商品ー過去の取引
-      = link_to "http://localhost:3000/users/mypage/news" do
+      = link_to users_mypage_news_path do
         %li.art
           = fa_icon 'chevron-right'
           ニュース一覧
-      = link_to "http://localhost:3000/users/mypage/reviews" do
+      = link_to users_mypage_reviews_path do
         %li.art
           = fa_icon 'chevron-right'
           評価一覧
@@ -73,7 +73,7 @@
     %h3
       設定
     %ul.nav--list
-      = link_to "http://18.179.104.79/users/mypage/profile" do
+      = link_to users_mypage_profile_path do
         %li.art
           = fa_icon 'chevron-right'
           プロフィール
@@ -81,7 +81,7 @@
         %li.art
           = fa_icon 'chevron-right'
           発送元・お届け先住居変更
-      = link_to "https://master.tech-camp.in/" do
+      = link_to users_mypage_card_path do
         %li.art
           = fa_icon 'chevron-right'
           支払い方法
@@ -89,7 +89,7 @@
         %li.art
           = fa_icon 'chevron-right'
           メール/パスワード
-      = link_to "http://localhost:3000/users/mypage/identification" do
+      = link_to users_mypage_identification_path do
         %li.art
           = fa_icon 'chevron-right'
           本人情報
@@ -97,7 +97,7 @@
         %li.art
           = fa_icon 'chevron-right'
           電話番号の確認
-      = link_to "https://master.tech-camp.in/" do
+      = link_to logout_path do
         %li.art
           = fa_icon 'chevron-right'
           ログアウト
