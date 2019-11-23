@@ -330,9 +330,20 @@
 
 .blue-text {
   color:#0099e8;
+  
 }
 
 .icon-size {
   font-weight: 800;
   font-size: 18px;
 }
+
+.blue-text { text-decoration: none; }
+.blue-text:hover { text-decoration: underline; 
+                    cursor: pointer;
+                    
+                  }
+
+.clear-text:hover { opacity: 0.6;
+                    cursor: pointer;
+                  }

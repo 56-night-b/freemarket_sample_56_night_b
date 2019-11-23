@@ -15,16 +15,16 @@
               %a.sell-name.blue-text
                 test
               .face-box
-                .face-box_good
+                .face-box_good.clear-text
                   %a=image_tag 'grin-solid.svg',width:16,height:16
                   
                   %span.good-value
                     666
-                .face-box_normal
+                .face-box_normal.clear-text
                   %a=image_tag 'meh-solid.svg',width:16,height:16
                   %span.normal-value
                     5
-                .face-box_bad
+                .face-box_bad.clear-text
                   %a=image_tag 'frown-solid.svg',width:16,height:16
                   %span.bad-value
                     55
@@ -32,22 +32,25 @@
           %tr.item-deta-box
             %th.item-deta-box_title
               カテゴリー
-            %td.item-deta-box_cell.blue-text
-              .item-main-categly
+            %td.item-deta-box_cell
+              %a.item-main-categly.blue-text.clear-text
                 自動車
               .item-sub-categly
-                %i.fa.fa-angle-right.icon-size{"aria-hidden" => "true"}
-                ドイツ車
+                %a.blue-text.clear-text
+                  %i.fa.fa-angle-right.icon-size{"aria-hidden" => "true"}
+                  ドイツ車
               .item-sub-categly
-                %i.fa.fa-angle-right.icon-size{"aria-hidden" => "true"}
-                VW
+                %a.blue-text.clear-text
+                  %i.fa.fa-angle-right.icon-size{"aria-hidden" => "true"}
+                  VW
 
             -# categoly
           %tr.item-deta-box  
             %th.item-deta-box_title
               ブランド
-            %td.item-deta-box_cell.blue-text
-              VW
+            %td.item-deta-box_cell
+              %a.blue-text.clear-text
+                VW
             -# brand
           %tr.item-deta-box  
             %th.item-deta-box_title
@@ -77,7 +80,8 @@
             %th.item-deta-box_title
               配送元地域
             %td.item-deta-box_cell.blue-text
-              兵庫県
+              %a.blue-text.clear-text
+                兵庫県
             -# area
           %tr.item-deta-box 
             %th.item-deta-box_title
@@ -118,7 +122,7 @@
       .safety-btn-box
         %i.material-icons.lock-icon
           lock
-          %span.safety-btn-box_text
+          %span.safety-btn-box_text.clear-text
             あんしん・あんぜんへの取り組み
 
 
@@ -134,14 +138,14 @@
 
   %ul.link-box
     %li.link-box_left
-      %a
+      %a.clear-text
         .link-icon
           %i.fa.fa-angle-left.icon-size{"aria-hidden" => "true"}
 
         .link-text
           バイク
     %li.link-box_right
-      %a
+      %a.clear-text
         .link-text
           舟
         .link-icon
@@ -152,11 +156,11 @@
   .item-social-media
     .text-center
     %ul.item-social-media-box
-      %li.item-social-media-box_icon
+      %li.item-social-media-box_icon.clear-text
         %i.fa.fa-facebook-square.icon-facebook{"aria-hidden" => "true"}
-      %li.item-social-media-box_icon
+      %li.item-social-media-box_icon.clear-text
         %i.fa.fa-twitter.icon-twitter{"aria-hidden" => "true"}
-      %li.item-social-media-box_icon
+      %li.item-social-media-box_icon.clear-text
         %i.fa.fa-pinterest.icon-pinterest{"aria-hidden" => "true"}
   .item-sub-box
     .item-sub-title
