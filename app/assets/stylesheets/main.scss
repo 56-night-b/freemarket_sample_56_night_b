@@ -79,6 +79,7 @@
           padding: 40px;
           overflow:hidden;
           
+          
           &_form-box {
             margin: 0;
 
@@ -94,6 +95,9 @@
           &_form-field {
             width: 100%;
             margin-top: 8px;
+            box-sizing:border-box;
+            border:none;
+            
           }
           // 商品の説明
           &_explanatory-text {
@@ -416,11 +420,11 @@ img {
    vertical-align: middle;
   }
   * {
-    background-repeat: no-repeat;
-    font-feature-settings: "palt";
+    // background-repeat: no-repeat;
+    // font-feature-settings: "palt";
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    // box-sizing: border-box;
     font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
     
     color: #333;
@@ -442,13 +446,13 @@ p{
   line-height: 1.5;
   font-size: 16px;
   width: 100%;
-  
+  box-sizing: border-box;
 
 }
 
 .sell-text-area {
   padding: 10px 16px 8px;
-  
+  box-sizing: border-box;
   border: 1px solid #ccc;
   background: #fff;
   line-height: 1.5;
