@@ -79,6 +79,7 @@
           padding: 40px;
           overflow:hidden;
           
+          
           &_form-box {
             margin: 0;
 
@@ -94,6 +95,9 @@
           &_form-field {
             width: 100%;
             margin-top: 8px;
+            box-sizing:border-box;
+            border:none;
+            
           }
           // 商品の説明
           &_explanatory-text {
@@ -204,6 +208,8 @@
             display: block;
           }
 
+          &_about-shipping-products-from-selector ::-ms-expand {
+             }
           &_about-shipping-products-from-selector {
             border-radius: 4px;
             border: 1px solid #ccc;
@@ -213,6 +219,18 @@
             font-size:16px;
             line-height: 1.5;
             cursor: pointer;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            padding: 7px 30px 7px 10px;
+            font-size: 93%;
+            line-height: 1.1em;
+            border-radius: 5px;
+            background-image: url(/assets/chevron-down-solid.svg);
+            background-repeat: no-repeat;
+            background-size: 20px 18px;
+            background-position: right 10px center;
+            background-color: #fff; 
 
           }
         }
@@ -368,15 +386,19 @@
       width: 456px;
       text-align: center;
       padding: 40px;
+      background-repeat: no-repeat;
+   
     
       &_link-text-box{
         text-align: center;
         font-size: 12px;
         display: flex;
+        box-sizing: border-box;
 
         .under-link-text2{
           text-align: center;
           margin-left: 16px;
+          box-sizing: border-box;
         }
       }
 
@@ -388,12 +410,14 @@
         font-size: 13px;
         font-feature-settings: "palt";
         font-family: Arial, Helvetica, sans-serif;
+        box-sizing: border-box;
       
       }
 
       &_image-log-box{  
         text-align: center;
         margin-top: 49px;
+        
        
       }
     }
@@ -412,67 +436,63 @@
         
               
 
-// img {
-//    vertical-align: middle;
-//   }
-//   * {
-//     background-repeat: no-repeat;
-//     font-feature-settings: "palt";
-//     margin: 0;
-//     padding: 0;
-//     box-sizing: border-box;
-//     font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
-    
-//     color: #333;
-// }
-// p{
-//   margin-top: 8px;
-//   font-weight: normal;
-//   font-size: 14px;
-//   font-feature-settings: "palt";
+.sell-wrapper img {
+   vertical-align: middle;
+  }
+  .sell-wrapper * {
+    background-repeat: no-repeat;
+    font-feature-settings: "palt";
+    box-sizing: border-box;
   
-// }
-
-// .sell-text-field{
-//   height: 48px;
-//   padding: 10px 16px 8px;
-//   border-radius: 4px;
-//   border: 1px solid #ccc;
-//   background: #fff;
-//   line-height: 1.5;
-//   font-size: 16px;
-//   width: 100%;
+}
+.sell-main p{
+  margin-top: 8px;
+  font-weight: normal;
+  font-size: 14px;
+  font-feature-settings: "palt";
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
   
+}
 
-// }
+.sell-text-field{
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
 
-// .sell-text-area {
-//   padding: 10px 16px 8px;
-  
-//   border: 1px solid #ccc;
-//   background: #fff;
-//   line-height: 1.5;
-//   font-size: 16px;
-//   width: 100%; 
+}
 
-// }
+.sell-text-area {
+  padding: 10px 16px 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+  width: 100%; 
 
-// select::-ms-expand {
-// 	display: none;
-// }
-// select {
-// 	-webkit-appearance: none;
-// 	-moz-appearance: none;
-// 	appearance: none;
-// 	padding: 7px 30px 7px 10px;
-// 	font-size: 93%;
-// 	line-height: 1.1em;
-// 	border-radius: 5px;
-// 	border: none;
-// 	background-image: url(/assets/chevron-down-solid.svg);
-// 	background-repeat: no-repeat;
-// 	background-size: 20px 18px;
-// 	background-position: right 10px center;
-//   background-color: #fff; 
-// }
+ }
+
+.sell-main select::-ms-expand {
+	display: none;
+}
+.sell-main select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	padding: 7px 30px 7px 10px;
+	font-size: 93%;
+	line-height: 1.1em;
+	border-radius: 5px;
+  border: none;
+	background-repeat: no-repeat;
+	background-size: 20px 18px;
+	background-position: right 10px center;
+  background-color: #fff; 
+}
 

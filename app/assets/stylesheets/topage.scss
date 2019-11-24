@@ -303,13 +303,19 @@ h2 {
 
 
 .BottomList {
-  color: rgb(255, 255, 255);
+  color: #fff;
+  opacity: 0.7;
   font-size: 12px;
   line-height: 30px;
 }
 
 .PopularCategory {
   margin:16px 0px 0px;
+}
+
+.fa.fa-search {
+  position:relative;
+  left:750px;
 }
 
 .CameraMark {

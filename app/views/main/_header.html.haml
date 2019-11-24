@@ -9,28 +9,28 @@
         %form.HeaderContents-HeaderTopSide--form1{action: "自分のサイトURL", method: "get"}
           %input.HeaderContents-HeaderTopSide--box1{name: " ", placeholder: "何かお探しですか？", type: "text"}/
           %button.btn{type: "submit"}
-            %i.fas.fa-search
+            %i.fa.fa-search{"aria-hidden" => "true"}
 
 
             
     .HeaderContentsHeaderBottomSide
       .HeaderContentsHeaderBottomSide-BottomLeft
         .HeaderContentsHeaderBottomSide-BottomLeft__category
-          %i.fas.fa-list-ul.my-red
+          %i.fa.fa-list-ul.my-red{"aria-hidden" => "true"}
           = link_to("カテゴリーから探す", "http://google.co.jp") 
         .HeaderContentsHeaderBottomSide-BottomLeft__brand
-          %i.fas.fa-tags.my-red
+          %i.fa.fa-tags.my-red{"aria-hidden" => "true"}
           = link_to("ブランドから探す", "http://google.co.jp")
       .HeaderContentsHeaderBottomSide-BottomRight
         %ul.HeaderContentsHeaderBottomSide-BottomRight__UserContents
           %li.HeaderContentsHeaderBottomSide-BottomRight__UserContents-like
-            %i.far.fa-heart
+            %i.fa.fa-heart{"aria-hidden" => "true"}
             = link_to("いいね一覧", "http://google.co.jp")
           %li.HeaderContentsHeaderBottomSide-BottomRight__UserContents-news
-            %i.far.fa-bell
+            %i.fa.fa-bell{"aria-hidden" => "true"}
             = link_to("お知らせ", "http://google.co.jp")
           %li.HeaderContentsHeaderBottomSide-BottomRight__UserContents-todo
-            %i.fas.fa-check
+            %i.fa.fa-check{"aria-hidden" => "true"}
             = link_to("やることリスト", "http://google.co.jp")
           %li.HeaderContentsHeaderBottomSide-BottomRight__UserContents-mypage
             = image_tag src="https://static.mercdn.net/images/member_photo_noimage_thumb.png",size: '32x32',class: "mypage-image"
