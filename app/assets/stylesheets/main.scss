@@ -490,9 +490,15 @@
 	line-height: 1.1em;
 	border-radius: 5px;
   border: none;
+	// background-image: url(/assets/chevron-down-solid.svg);
 	background-repeat: no-repeat;
 	background-size: 20px 18px;
 	background-position: right 10px center;
   background-color: #fff; 
 }
 
+select:before {
+  font-family: "Font Awesome";
+  content: '\f1e2';
+  font-weight: 900;
+}
