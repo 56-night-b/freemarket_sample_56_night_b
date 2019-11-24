@@ -6,6 +6,7 @@
     %script{src:"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"}
     %script{src:"/assets/show.js"}
   %body
+    = render partial: 'main/header'
     .whole
       .container
         .main_box
@@ -32,3 +33,5 @@
                         １日前
           
         = render partial: 'sidber'
+
+    = render partial: 'main/footer'
