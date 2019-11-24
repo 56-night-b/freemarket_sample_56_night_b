@@ -40,7 +40,6 @@
                     .identification-required-box 任意
                   .identification-field-input__text
                     .identification-field-input__text--select1
-                      %i.fas.fa-chevron-down
                       = f.select :prefectures, options_for_select(@prefectures.map{|c|[c[:name], c[:id]]}),{include_blank: true},{class:'select-prefectures'}
                 .identification-field-input
                   .identification-label

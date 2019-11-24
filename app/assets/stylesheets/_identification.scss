@@ -70,15 +70,7 @@
                       width: 100%;
                     }
                     &--select1{
-                      i{
-                        position:relative;
-                        top: 35px;
-                        left: 600px;
-                      }
-                      i:before {
-                        z-index: 2;
-                        pointer-events: none;
-                      }
+                      position:relative;
                       select::-ms-expand {
                         display: none;
                       }
@@ -110,6 +102,17 @@
                         color: transparent; 
                         text-shadow: 0 0 0 #828c9a;
                       }
+                    }
+                    &--select1:before{
+                      z-index: 1;
+                      position: absolute;
+                      right: 15px;
+                      top: 0;
+                      content: "\f107";
+                      font-family: "fontawesome";
+                      line-height: 43px;
+                      color: #7F878C;
+                      pointer-events: none;
                     }
                   }
                 }
