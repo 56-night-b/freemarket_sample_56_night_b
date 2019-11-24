@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_09_122111) do
+ActiveRecord::Schema.define(version: 2019_11_24_040026) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "name_kanji", null: false
@@ -31,6 +31,26 @@ ActiveRecord::Schema.define(version: 2019_11_09_122111) do
     t.integer "card_number", null: false
     t.string "expiration_date", null: false
     t.integer "securitycord", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.integer "product_id", null: false
+    t.string "image", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.integer "value", null: false
+    t.string "name", null: false
+    t.integer "product_explanation"
+    t.integer "category", null: false
+    t.string "producut_situation"
+    t.integer "postage_burden", null: false
+    t.integer "shipping_origin", null: false
+    t.integer "arrival_days"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

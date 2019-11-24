@@ -3,7 +3,7 @@
     .CameraMark-shuppin.my-white
       出品
     .CameraMark-camera-image
-      %i.fas.fa-camera.my-white.fa-4x
+      %i.fa.fa-camera.my-white.fa-4x{"aria-hidden" => "true"}
 
 .aside
   .aside-contents
@@ -37,11 +37,7 @@
           メルカリロゴ利用ガイドライン
       .footer-nav-NavLeft-SnsLogo
         .footer-nav-NavLeft-SnsLogo--twitter
-        = link_to ("https://twitter.com/") do
-          %i.fab.fa-twitter-square.my-white.fa-2x
-        .footer-nav-NavLeft-SnsLogo--facebook
-        = link_to ("https://ja-jp.facebook.com/") do
-          %i.fab.fa-facebook-square.my-white.fa-2x
+        = link_to(image_tag('toppage_logo.png', size: '80x33', border: 0), 'http://www.yahoo.co.jp', popup: true)
     .footer-nav-NavRight
       %h2 ヘルプ&ガイド
       %ul.BottomList
