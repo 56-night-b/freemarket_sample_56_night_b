@@ -1,5 +1,5 @@
 .show-page {
-  background: #fafafa;
+  background: #f5f5f5;
 
 }
 .item-box-outer {
@@ -328,12 +328,13 @@
   }
 }
 .example-item-box {
-  margin: 8px auto;
+  margin: 30px auto;
   list-style: none;
-  width :740px;
-  height: 700px;
+  width :700px;
+  // height: 700px;
   box-sizing: border-box;
-  padding:0 20px 0 10px;
+  margin-bottom: 40px;
+  // padding:0 0 0 5px;
   
   
   
@@ -341,23 +342,47 @@
   
 
   &_title {
-    margin-left: 10px;
+    margin: 30px auto;
     font-size: 22px;
     font-weight: bold;
     display: block;
     margin-bottom:8px;
   }
 
-  &_content {
-    box-sizing: border-box;
-    border:none ;
-    width: 220px;
-    margin-left:10px;
-    object-fit:cover;
-    background-color: #fff;
-    display: inline-block;
+  &_flex {
+    margin-top: 20px;
+    width: 700px;
+    height:330px;
+    display:-moz-box;
+    display:-webkit-box;
+    display:-o-box;
+    display:-ms-box;
+    -moz-box-pack:justify;
+    -webkit-box-pack:justify;
+    -o-box-pack:justify;
+    -ms-box-pack:justify
+    
+ 
+  
    
+  
+    
   }
+  &_content {
+    
+      width: 220px;
+      box-sizing: border-box;
+      
+      // flex-basis:220px;
+      // max-width: 220px;
+      background: #fff;
+     
+      // object-fit:cover;
+      // background-color: #fff;
+      
+    
+    }
+
 
 }
 .example-item-text-box {
@@ -376,6 +401,27 @@
    width: 100%;
    
  }
+
+ .under-box {
+   height: 48px;
+   box-sizing: border-box;
+   border-top: solid;
+   border-top: 1px solid #eee;
+   
+   &_content {
+    display: inline-block;
+
+  }
+
+ }
+  .under-box ul {
+    width: 1020px;
+    margin: 0 auto;
+    padding: 16px 0;
+    font-size: 14px;
+    
+  }
+ 
 
 
 .blue-text {
@@ -420,4 +466,9 @@
   display: block;
   margin-top: 8px;
 
+}
+.angle-icon-color {
+    margin: 0 8px;
+    font-size: 16px;
+    color: #888;
 }
