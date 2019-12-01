@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  # root :to => 'main#index'
+  root :to => 'main#index'
   get 'users/mypage' => 'users#mypage'
   get 'users/mypage/notice' => 'users#notice'
   get 'users/mypage/to_do' => 'users#to_do'
@@ -30,7 +30,6 @@ Rails.application.routes.draw do
   resources :main do
     collection do
       get 'product_purchase_confirmation'
-      get 'item_details'
     end
   end
 
