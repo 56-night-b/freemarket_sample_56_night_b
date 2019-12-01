@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   resources :main do
     collection do
       get 'product_purchase_confirmation'
-      get 'item-details'
+      get 'item_details'
     end
   end
 

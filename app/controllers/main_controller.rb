@@ -9,7 +9,7 @@ class MainController < ApplicationController
   def updata#商品購入
   end
 
-  def itemーdetails#商品詳細
+  def item_details#商品詳細
   end
 
   def product_purchase_confirmation #商品購入確認
