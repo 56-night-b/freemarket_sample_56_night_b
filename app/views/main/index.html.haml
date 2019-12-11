@@ -39,7 +39,7 @@
                 = product.name
   %p.NewItem 家電・スマホ・カメラ新着アイテム
   .ContentsWrap__LadiesNewItem
-    - @elecimages.zip(@elec).each do |image, product|
+    - @elecimages.zip(@elecs).each do |image, product|
       .item-image
         = link_to main_path(product) do
           %div
@@ -51,7 +51,7 @@
                 = product.name
   %p.NewItem おもちゃ・ホビー・グッズ新着アイテム
   .ContentsWrap__LadiesNewItem
-    - @hobbyimages.zip(@hobby).each do |image, product|
+    - @hobbyimages.zip(@hobbies).each do |image, product|
       .item-image
         = link_to main_path(product) do
           %div
@@ -73,7 +73,7 @@
 .ContentsWrap
   %p.NewItem シャネル新着アイテム
   .ContentsWrap__LadiesNewItem
-    - @chanelimages.zip(@chanel).each do |image, product|
+    - @chanelimages.zip(@chanels).each do |image, product|
       .item-image
         = link_to main_path(product) do
           %div
@@ -85,7 +85,7 @@
                 = product.name
   %p.NewItem ルイヴィトン新着アイテム
   .ContentsWrap__LadiesNewItem
-    - @vuittonimages.zip(@vuitton).each do |image, product|
+    - @vuittonimages.zip(@vuittons).each do |image, product|
       .item-image
         = link_to main_path(product) do
           %div
@@ -97,7 +97,7 @@
                 = product.name
   %p.NewItem シュプリーム新着アイテム
   .ContentsWrap__LadiesNewItem
-    - @supremeimages.zip(@supreme).each do |image, product|
+    - @supremeimages.zip(@supremes).each do |image, product|
       .item-image
         = link_to main_path(product) do
           %div
@@ -109,7 +109,7 @@
                 = product.name
   %p.NewItem ナイキ新着アイテム
   .ContentsWrap__LadiesNewItem
-    - @nikeimage.zip(@nike).each do |image, product|
+    - @nikeimages.zip(@nikes).each do |image, product|
       .item-image
         = link_to main_path(product) do
           %div
