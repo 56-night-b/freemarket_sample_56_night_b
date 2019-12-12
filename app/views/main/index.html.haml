@@ -14,297 +14,53 @@
     .NewItem レディース新着アイテム
     .more もっと見る＞
   .ContentsWrap__LadiesNewItem
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-  .item-bottom
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
+    - @ladiesimages.zip(@ladies).each do |image, product|
+      .item-image
+        = link_to main_path(product) do
+          %div
+            .image-text
+              = image_tag image.image, size: "180x180", class: "example-image"
+              %p 
+                = "¥#{product.value}"
+              %figcaption 
+                = product.name
   .new-item-wrap
     %p.NewItem メンズ新着アイテム
   .ContentsWrap__LadiesNewItem
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-  .item-bottom
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
+    - @mensimages.zip(@mens).each do |image, product|
+      .item-image
+        = link_to main_path(product) do
+          %div
+            .image-text
+              = image_tag image.image, size: "180x180", class: "example-image"
+              %p 
+                = "¥#{product.value}"
+              %figcaption 
+                = product.name
   %p.NewItem 家電・スマホ・カメラ新着アイテム
   .ContentsWrap__LadiesNewItem
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-  .item-bottom
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
+    - @elecimages.zip(@elecs).each do |image, product|
+      .item-image
+        = link_to main_path(product) do
+          %div
+            .image-text
+              = image_tag image.image, size: "180x180", class: "example-image"
+              %p 
+                = "¥#{product.value}"
+              %figcaption 
+                = product.name
   %p.NewItem おもちゃ・ホビー・グッズ新着アイテム
   .ContentsWrap__LadiesNewItem
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-  .item-bottom
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
+    - @hobbyimages.zip(@hobbies).each do |image, product|
+      .item-image
+        = link_to main_path(product) do
+          %div
+            .image-text
+              = image_tag image.image, size: "180x180", class: "example-image"
+              %p 
+                = "¥#{product.value}"
+              %figcaption 
+                = product.name
 
 #popular-brand
   人気のブランド
@@ -317,295 +73,51 @@
 .ContentsWrap
   %p.NewItem シャネル新着アイテム
   .ContentsWrap__LadiesNewItem
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-  .item-bottom
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
+    - @chanelimages.zip(@chanels).each do |image, product|
+      .item-image
+        = link_to main_path(product) do
+          %div
+            .image-text
+              = image_tag image.image, size: "180x180", class: "example-image"
+              %p 
+                = "¥#{product.value}"
+              %figcaption 
+                = product.name
   %p.NewItem ルイヴィトン新着アイテム
   .ContentsWrap__LadiesNewItem
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-  .item-bottom
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
+    - @vuittonimages.zip(@vuittons).each do |image, product|
+      .item-image
+        = link_to main_path(product) do
+          %div
+            .image-text
+              = image_tag image.image, size: "180x180", class: "example-image"
+              %p 
+                = "¥#{product.value}"
+              %figcaption 
+                = product.name
   %p.NewItem シュプリーム新着アイテム
   .ContentsWrap__LadiesNewItem
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-  .item-bottom
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
+    - @supremeimages.zip(@supremes).each do |image, product|
+      .item-image
+        = link_to main_path(product) do
+          %div
+            .image-text
+              = image_tag image.image, size: "180x180", class: "example-image"
+              %p 
+                = "¥#{product.value}"
+              %figcaption 
+                = product.name
   %p.NewItem ナイキ新着アイテム
   .ContentsWrap__LadiesNewItem
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p 18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-  .item-bottom
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-    .item-image
-      = link_to ("https://ja-jp.facebook.com/") do 
-        %div
-          .image-text
-            = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
-            %p ¥18,000
-            %figcaption supreme
-
+    - @nikeimages.zip(@nikes).each do |image, product|
+      .item-image
+        = link_to main_path(product) do
+          %div
+            .image-text
+              = image_tag image.image, size: "180x180", class: "example-image"
+              %p 
+                = "¥#{product.value}"
+              %figcaption 
+                = product.name
+            
 = render 'footer'
