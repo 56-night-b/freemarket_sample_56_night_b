@@ -27,17 +27,18 @@
   min-width:300px;
   max-width:300px;
   min-height:370px;
-  // background-image: image-url("vw.jpeg");
-  
+  background-image: image-url("vw.jpeg");
+  background-size:cover;
  
   .item-image {
     height:auto;
     box-sizing:border-box;
     max-width: 100%;    
-    background-image: image-url("vw.jpeg");
+    
     
   }
 }
+
 
 .item-deta-outer {
   float:right;
