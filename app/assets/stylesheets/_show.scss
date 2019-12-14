@@ -27,8 +27,9 @@
   // min-width:300px;
   width:300px;
   height:370px;
-  background-size:cover;
+  
   background-image: image-url("vw.jpeg");
+  background-size:contain;
  
   // .item-image {
   //   height:auto;
