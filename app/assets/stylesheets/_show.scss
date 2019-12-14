@@ -24,9 +24,9 @@
 }
 .item-image-box {
   float:left;
-  min-width:300px;
-  max-width:300px;
-  min-height:370px;
+  // min-width:300px;
+  width:300px;
+  height:370px;
   background-size:cover;
   background-image: image-url("vw.jpeg");
  
