@@ -23,6 +23,7 @@ Rails.application.routes.draw do
       get 'sign_up_tel_number' 
       get 'sign_up_address' 
       get 'sign_up_payment' 
+      post 'create'
       get 'sign_up_done'
     end
   end

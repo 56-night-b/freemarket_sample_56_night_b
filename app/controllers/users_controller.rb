@@ -54,39 +54,164 @@ class UsersController < ApplicationController
   end
 
   def sign_up_tel_number
-    session[:nickname] = params[:nickname]
-    session[:email] = params[:email]
-    session[:password] = params[:password]
-    session[:password_confirmation] = params[:password_confirmation]
+    session[:nickname] = user_params[:nickname]
+    session[:email] = user_params[:email]
+    session[:password] = user_params[:password]
+    session[:password_confirmation] = user_params[:password_confirmation]
     @user = User.new # 新規インスタンス作成
   end
 
   def sign_up_address
-    session[:phone_number] = params[:phone_number]
+    session[:my_phone_number] = user_params[:my_phone_number]
     @user = User.new # 新規インスタンス作成
-    @address = Address.new # 新規インスタンス作成
+    @user.build_address
+    @address = Address.new
   end
 
   def sign_up_payment
-    session[:name_kanji] = params[:name_kanji]
-    session[:name_kana] = params[:name_kana]
-    session[:postal_cord] = params[:postal_cord]
-    session[:prefectures] = params[:prefectures]
-    session[:municipalities] = params[:municipalities]
-    session[:house_number] = params[:house_number]
-    session[:building_name] = params[:building_name]
-    session[:phone_number] = params[:phone_number]
-    @address = Address.new # 新規インスタンス作成
+    session[:famliy_name_kanji] = user_params[:famliy_name_kanji]
+    session[:first_name_name_kanji] = user_params[:first_name_name_kanji]
+    session[:famliy_name_kana] = user_params[:famliy_name_kana]
+    session[:first_name_name_kana] = user_params[:first_name_name_kana]
+    # session[:address_attributes] = user_params[:address_attributes]
+    session[:postal_cord] = user_params[:address_attributes][:postal_cord]
+    session[:prefectures] = user_params[:address_attributes][:prefectures]
+    session[:municipalities] = user_params[:address_attributes][:municipalities]
+    session[:house_number] = user_params[:address_attributes][:house_number]
+    session[:building_name] = user_params[:address_attributes][:building_name]
+    session[:phone_number] = user_params[:address_attributes][:phone_number]
+    @user = User.new # 新規インスタンス作成
+    @address = Address.new
     @card = Card.new
   end
 
   def sign_up_done
-    session[:card_number] = params[:card_number]
-    session[:expiration_date] = params[:expiration_date]
-    session[:securitycord] = params[:securitycord]
-    @card = Card.new
+    # sign_in User.find(session[:id]) unless user_signed_in?
+  end
+
+  def create
+    session[:expiration_date]=expiration_date_join
+    session[:card_number] = card_params[:card_number]
+    session[:securitycord] = card_params[:securitycord]
+    @user = User.new(
+      nickname: session[:nickname], # sessionに保存された値をインスタンスに渡す
+      email: session[:email],
+      password: session[:password],
+      password_confirmation: session[:password_confirmation],
+      my_phone_number: session[:my_phone_number],
+      famliy_name_kanji: session[:famliy_name_kanji],
+      first_name_name_kanji: session[:first_name_name_kanji],
+      famliy_name_kana: session[:famliy_name_kana],
+      first_name_name_kana: session[:first_name_name_kana]
+    )
+    # num = Address.all.length
+    # u_id = User.limit(1).order('id DESC').select('id')
+    # user_address = @user.build_address
+    # @address1 = Address.new(
+    #   postal_cord: session[:postal_cord],
+    #   prefectures: session[:prefectures],
+    #   municipalities: session[:municipalities],
+    #   house_number: session[:house_number],
+    #   building_name: session[:building_name],
+    #   phone_number: session[:phone_number]
+    # )
+    # @address = @user.build_address
+    # @address.user=@user
+    # binding.pry
+    # @card = Card.new(
+    #   card_number: session[:card_number],
+    #   expiration_date: session[:expiration_date],
+    #   securitycord: session[:securitycord]
+    # )
+    if @user.save
+      user_address = @user.build_address
+      address_create = @user.created_at
+      address_updated = @user.updated_at
+      @address = Address.new(
+        postal_cord: session[:postal_cord],
+        prefectures: session[:prefectures],
+        municipalities: session[:municipalities],
+        house_number: session[:house_number],
+        building_name: session[:building_name],
+        phone_number: session[:phone_number],
+        user_id: user_address[:user_id],
+        created_at: address_create,
+        updated_at: address_updated
+      )
+      if @address.save
+        @card = Card.new(
+          card_number: session[:card_number],
+          expiration_date: session[:expiration_date],
+          securitycord: session[:securitycord],
+          user_id: user_address[:user_id],
+          created_at: address_create,
+          updated_at: address_updated
+        )
+        binding.pry
+        if @card.save
+          # ログインするための情報を保管
+          session[:id] = @user.id
+          redirect_to sign_up_done_users_path
+        else
+          render "sign_up_payment"
+        end
+      else
+        render "sign_up_address"
+      end
+    else
+      render "sign_up_memberinfo"
+    end
   end
 
   def logout
   end
+
+  private
+
+   def user_params
+    params.require(:user).permit(
+      :nickname, 
+      :email, 
+      :password, 
+      :password_confirmation, 
+      :my_phone_number,
+      :famliy_name_kanji,
+      :first_name_name_kanji,
+      :famliy_name_kana,
+      :first_name_name_kana,
+      address_attributes:[:postal_cord,:prefectures,:municipalities,:house_number,:building_name,:phone_number]
+    )
+    end
+
+    # def address_params
+    #   params.require(:address).permit(
+    #     :postal_cord,
+    #     :prefectures,
+    #     :municipalities,
+    #     :house_number,
+    #     :building_name,
+    #     :phone_number
+    #   )
+    # end
+
+    def card_params
+      params.require(:card).permit(
+        :card_number,
+        :expiration_date,
+        :securitycord
+      )
+    end
+
+    def expiration_date_join
+      date_yy = params[:card]["expiration_date(1i)"]
+      date_mm = params[:card]["expiration_date(2i)"]
+
+      if date_mm.empty? && date_yy.empty? 
+        return
+      end
+
+      Date.new(20+date_yy.to_i/date_mm.to_i) 
+    end
+    
+  
 end

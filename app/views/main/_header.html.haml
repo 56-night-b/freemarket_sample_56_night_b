@@ -33,6 +33,15 @@
             %i.fa.fa-check{"aria-hidden" => "true"}
             = link_to("やることリスト", "http://google.co.jp")
           %li.HeaderContentsHeaderBottomSide-BottomRight__UserContents-mypage
-            = image_tag src="https://static.mercdn.net/images/member_photo_noimage_thumb.png",size: '32x32',class: "mypage-image"
-            %p#mypage
-              = link_to("マイページ", "http://google.co.jp")
+            #mypage
+              - if user_signed_in?
+                = image_tag src="https://static.mercdn.net/images/member_photo_noimage_thumb.png",size: '32x32',class: "mypage-image"
+                -# = link_to("マイページ", "http://18.179.104.79/users/mypage")
+                = link_to("マイページ", "http://localhost:3000/users/mypage")
+                -# ログインユーザー： #{current_user.email}
+                -# \#{link_to 'アカウント変更', edit_user_registration_path}
+                \#{link_to "ログアウト", destroy_user_session_path}
+              - else
+                = link_to "新規作成", new_user_registration_path
+                = link_to "ログイン", new_user_session_path
+              

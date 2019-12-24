@@ -10,17 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_08_043525) do
+ActiveRecord::Schema.define(version: 2019_12_24_180417) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name_kanji", null: false
-    t.string "name_kana", null: false
     t.integer "postal_cord", null: false
     t.string "prefectures", null: false
     t.string "municipalities", null: false
     t.integer "house_number", null: false
     t.string "building_name", null: false
-    t.integer "phone_number", null: false
+    t.string "phone_number", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -29,10 +27,12 @@ ActiveRecord::Schema.define(version: 2019_12_08_043525) do
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "card_number", null: false
-    t.string "expiration_date", null: false
     t.integer "securitycord", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "expiration_date"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -60,10 +60,10 @@ ActiveRecord::Schema.define(version: 2019_12_08_043525) do
     t.string "nickname"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.integer "birthday", null: false
-    t.integer "phone_number", null: false
-    t.integer "image"
-    t.integer "introduction"
+    t.integer "birthday"
+    t.bigint "my_phone_number", null: false
+    t.string "image"
+    t.string "introduction"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -78,4 +78,5 @@ ActiveRecord::Schema.define(version: 2019_12_08_043525) do
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "cards", "users"
 end

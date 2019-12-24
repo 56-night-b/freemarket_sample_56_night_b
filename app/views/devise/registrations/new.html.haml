@@ -10,7 +10,8 @@
 
       .account-page__inner--second.user-form
         .account-page__inner--second--login-form
-          %button.mail-login{onclick:"location.href='http://18.179.104.79/users/sign_up_memberinfo'",type:"“button”"}
+          -# %button.mail-login{onclick:"location.href='http://18.179.104.79/users/sign_up_memberinfo'",type:"“button”"} //本番環境//
+          %button.mail-login{onclick:"location.href='http://localhost:3000/users/sign_up_memberinfo'",type:"“button”"}
             %i.far.fa-envelope.fa-2x{color:"#fff"}
             メールアドレスで登録する
           %br
