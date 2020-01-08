@@ -8,6 +8,9 @@
     = render partial: 'main/header'
     .whole
       .container
+        #breadcrumb
+          - breadcrumb :buy_transacted
+          = breadcrumbs pretext: "",separator: " &rsaquo; "
         .main_box 
           .buy_product
             .buy_product__title

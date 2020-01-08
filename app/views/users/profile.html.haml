@@ -1,6 +1,9 @@
 = render partial: 'main/header'
 .profile-whole
   .profile-container
+    #breadcrumb
+      - breadcrumb :profile
+      = breadcrumbs pretext: "",separator: " &rsaquo; "
     .profile-main_box
       .profile-main
         .profile-main__title
