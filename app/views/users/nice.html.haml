@@ -8,11 +8,13 @@
     = render partial: 'main/header'
     .whole
       .container
+        #breadcrumb
+          - breadcrumb :nice
+          = breadcrumbs pretext: "",separator: " &rsaquo; "
         .main_box
           .nice
             .nice__title
               いいね！一覧
-                  
             %ul.contents2
               %li.contents2__mainlist2.show2
                 .nice--box

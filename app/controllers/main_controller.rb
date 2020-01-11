@@ -37,7 +37,7 @@ class MainController < ApplicationController
   def show#商品詳細
   end
 
-  def product_purchase_confirmation #商品購入確認
+  def product_purchase_confirmation#商品購入確認
   end
   
 end

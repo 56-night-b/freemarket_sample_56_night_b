@@ -2,7 +2,17 @@
   = link_to image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?3580354878"),"https://www.mercari.com/jp/"
 .main-pp-confirmation
   .main-pp-confirmation__top
-    %p 商品は既に売り切れています
+    %p 購入内容の確認
+  .main-pp-confirmation__ProductData
+    .main-pp-confirmation__ProductData__Image
+      = image_tag src="<%= image.image %>",size: '180x180',class: "example-image"
+    .main-pp-confirmation__ProductData__Name
+      =product.name
+    .main-pp-confirmation__ProductData__Price
+      =product.value
+  
+  .main-pp-confirmation__CardInfo
+  
   .main-pp-confirmation__buttom
     =link_to "商品画面に戻る","https://item.mercari.com/jp/m70068440240/"
 .footer.gray

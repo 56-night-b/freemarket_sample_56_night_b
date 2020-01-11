@@ -1,17 +1,9 @@
 = render 'main/header'
             
 .LogoutHeader
-  %ul.LogoutHeader__menu
-    %li.LogoutHeader__menu1 
-      メルカリ 
-      %i.fas.fa-angle-right
-    %li.LogoutHeader__menu2 
-      マイページ
-      %i.fas.fa-angle-right
-    %li.LogoutHeader__menu3 
-      ログアウト
-      %i.fas.fa-angle-right
-
+  #breadcrumbLogout
+    - breadcrumb :logout
+    = breadcrumbs pretext: "",separator: " &rsaquo; "
 .SideBarWrap
   = render 'sidber'
 

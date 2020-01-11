@@ -10,6 +10,9 @@
     = render partial: 'main/header'
     .whole
       .container
+        #breadcrumb
+          - breadcrumb :mypage
+          = breadcrumbs pretext: "",separator: " &rsaquo; "
         .main_box
           .main
             .main__user_icon

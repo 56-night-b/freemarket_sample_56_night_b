@@ -8,6 +8,9 @@
     = render partial: 'main/header'
     .whole
       .container
+        #breadcrumb
+          - breadcrumb :notice
+          = breadcrumbs pretext: "",separator: " &rsaquo; "
         .main_box
           .main
             %ul.main__user_tabs
