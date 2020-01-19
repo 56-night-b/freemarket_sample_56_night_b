@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
-  
+  before_action :validates_step1, only: :sign_up_tel_number
+  before_action :validates_step2, only: :sign_up_address
+  before_action :validates_step3, only: :sign_up_payment
+  before_action :validates_step4, only: :create
+
   def mypage
   end
 
@@ -46,7 +50,7 @@ class UsersController < ApplicationController
     session[:municipalities] = params[:municipalities]
     session[:house_number] = params[:house_number]
     session[:building_name] = params[:building_name]
-    @address = Address.new
+    @user = Address.new
   end
 
   def sign_up_memberinfo
@@ -64,8 +68,6 @@ class UsersController < ApplicationController
   def sign_up_address
     session[:my_phone_number] = user_params[:my_phone_number]
     @user = User.new # 新規インスタンス作成
-    @user.build_address
-    @address = Address.new
   end
 
   def sign_up_payment
@@ -73,26 +75,82 @@ class UsersController < ApplicationController
     session[:first_name_name_kanji] = user_params[:first_name_name_kanji]
     session[:famliy_name_kana] = user_params[:famliy_name_kana]
     session[:first_name_name_kana] = user_params[:first_name_name_kana]
-    # session[:address_attributes] = user_params[:address_attributes]
-    session[:postal_cord] = user_params[:address_attributes][:postal_cord]
-    session[:prefectures] = user_params[:address_attributes][:prefectures]
-    session[:municipalities] = user_params[:address_attributes][:municipalities]
-    session[:house_number] = user_params[:address_attributes][:house_number]
-    session[:building_name] = user_params[:address_attributes][:building_name]
-    session[:phone_number] = user_params[:address_attributes][:phone_number]
+
+    session[:postal_cord] = user_params[:postal_cord]
+    session[:prefectures] = user_params[:prefectures]
+    session[:municipalities] = user_params[:municipalities]
+    session[:house_number] = user_params[:house_number]
+    session[:building_name] = user_params[:building_name]
+    session[:phone_number] = user_params[:phone_number]
     @user = User.new # 新規インスタンス作成
-    @address = Address.new
     @card = Card.new
   end
 
   def sign_up_done
-    # sign_in User.find(session[:id]) unless user_signed_in?
+    sign_in User.find(session[:id]) unless user_signed_in?
   end
 
-  def create
-    session[:expiration_date]=expiration_date_join
-    session[:card_number] = card_params[:card_number]
-    session[:securitycord] = card_params[:securitycord]
+  def validates_step1
+    session[:nickname] = user_params[:nickname]
+    session[:email] = user_params[:email]
+    session[:password] = user_params[:password]
+    session[:password_confirmation] = user_params[:password_confirmation]
+
+    @user = User.new(
+      nickname: session[:nickname], 
+      email: session[:email],
+      password: session[:password],
+      password_confirmation: session[:password_confirmation],
+      my_phone_number: "09012345678",
+      famliy_name_kanji: "山田",
+      first_name_name_kanji: "太郎",
+      famliy_name_kana: "ヤマダ",
+      first_name_name_kana: "タロウ",
+      postal_cord: 1230098,
+      prefectures: "北海道",
+      municipalities: "札幌市",
+      house_number: "1番地",
+      building_name: "札幌タワー",
+      phone_number: "09087654321"
+    )
+    render 'sign_up_memberinfo' unless @user.valid?(:validates_step1)
+  end
+
+  def validates_step2
+    session[:my_phone_number] = user_params[:my_phone_number]
+    @user = User.new(
+      nickname: session[:nickname], 
+      email: session[:email],
+      password: session[:password],
+      password_confirmation: session[:password_confirmation],
+      my_phone_number: session[:my_phone_number],
+      famliy_name_kanji: "山田",
+      first_name_name_kanji: "太郎",
+      famliy_name_kana: "ヤマダ",
+      first_name_name_kana: "タロウ",
+      postal_cord: 1230098,
+      prefectures: "北海道",
+      municipalities: "札幌市",
+      house_number: "1番地",
+      building_name: "札幌タワー",
+      phone_number: "09087654321"
+    )
+    render 'sign_up_tel_number' unless @user.valid?(:validates_step2)
+  end
+
+  def validates_step3
+    session[:famliy_name_kanji] = user_params[:famliy_name_kanji]
+    session[:first_name_name_kanji] = user_params[:first_name_name_kanji]
+    session[:famliy_name_kana] = user_params[:famliy_name_kana]
+    session[:first_name_name_kana] = user_params[:first_name_name_kana]
+
+    session[:postal_cord] = user_params[:postal_cord]
+    session[:prefectures] = user_params[:prefectures]
+    session[:municipalities] = user_params[:municipalities]
+    session[:house_number] = user_params[:house_number]
+    session[:building_name] = user_params[:building_name]
+    session[:phone_number] = user_params[:phone_number]
+
     @user = User.new(
       nickname: session[:nickname], # sessionに保存された値をインスタンスに渡す
       email: session[:email],
@@ -102,68 +160,65 @@ class UsersController < ApplicationController
       famliy_name_kanji: session[:famliy_name_kanji],
       first_name_name_kanji: session[:first_name_name_kanji],
       famliy_name_kana: session[:famliy_name_kana],
-      first_name_name_kana: session[:first_name_name_kana]
+      first_name_name_kana: session[:first_name_name_kana],
+      postal_cord: session[:postal_cord],
+      prefectures: session[:prefectures],
+      municipalities: session[:municipalities],
+      house_number: session[:house_number],
+      building_name: session[:building_name],
+      phone_number: session[:phone_number]
     )
-    # num = Address.all.length
-    # u_id = User.limit(1).order('id DESC').select('id')
-    # user_address = @user.build_address
-    # @address1 = Address.new(
-    #   postal_cord: session[:postal_cord],
-    #   prefectures: session[:prefectures],
-    #   municipalities: session[:municipalities],
-    #   house_number: session[:house_number],
-    #   building_name: session[:building_name],
-    #   phone_number: session[:phone_number]
-    # )
-    # @address = @user.build_address
-    # @address.user=@user
-    # binding.pry
-    # @card = Card.new(
-    #   card_number: session[:card_number],
-    #   expiration_date: session[:expiration_date],
-    #   securitycord: session[:securitycord]
-    # )
-    if @user.save
-      user_address = @user.build_address
-      address_create = @user.created_at
-      address_updated = @user.updated_at
-      @address = Address.new(
-        postal_cord: session[:postal_cord],
-        prefectures: session[:prefectures],
-        municipalities: session[:municipalities],
-        house_number: session[:house_number],
-        building_name: session[:building_name],
-        phone_number: session[:phone_number],
-        user_id: user_address[:user_id],
-        created_at: address_create,
-        updated_at: address_updated
-      )
-      if @address.save
-        @card = Card.new(
-          card_number: session[:card_number],
-          expiration_date: session[:expiration_date],
-          securitycord: session[:securitycord],
-          user_id: user_address[:user_id],
-          created_at: address_create,
-          updated_at: address_updated
-        )
-        binding.pry
-        if @card.save
-          # ログインするための情報を保管
-          session[:id] = @user.id
-          redirect_to sign_up_done_users_path
-        else
-          render "sign_up_payment"
-        end
-      else
-        render "sign_up_address"
-      end
-    else
-      render "sign_up_memberinfo"
-    end
+    render 'sign_up_address' unless @user.valid?(:validates_step3)
   end
 
-  def logout
+  def validates_step4
+    session[:expiration_date]=expiration_date_join.to_s
+    session[:card_number] = card_params[:card_number]
+    session[:securitycord] = card_params[:securitycord]
+    @card = Card.new(
+      card_number: session[:card_number],
+      expiration_date: session[:expiration_date],
+      securitycord: session[:securitycord]
+    )
+    binding.pry
+    render 'sign_up_payment' unless @card.valid?(:validates_step4)
+  end
+
+  def create
+    binding.pry
+    @user = User.new(
+      nickname: session[:nickname], # sessionに保存された値をインスタンスに渡す
+      email: session[:email],
+      password: session[:password],
+      password_confirmation: session[:password_confirmation],
+      my_phone_number: session[:my_phone_number],
+      famliy_name_kanji: session[:famliy_name_kanji],
+      first_name_name_kanji: session[:first_name_name_kanji],
+      famliy_name_kana: session[:famliy_name_kana],
+      first_name_name_kana: session[:first_name_name_kana],
+      postal_cord: session[:postal_cord],
+      prefectures: session[:prefectures],
+      municipalities: session[:municipalities],
+      house_number: session[:house_number],
+      building_name: session[:building_name],
+      phone_number: session[:phone_number]
+    )
+    @user.save
+    binding.pry
+    user_card = @user.id
+    @card = Card.new(
+      card_number: session[:card_number],
+      expiration_date: session[:expiration_date],
+      securitycord: session[:securitycord],
+      user_id: user_card,
+      created_at: @user.created_at,
+      updated_at: @user.updated_at
+    )
+    binding.pry
+    @card.save
+    # ログインするための情報を保管
+    session[:id] = @user.id
+    redirect_to sign_up_done_users_path
   end
 
   private
@@ -179,20 +234,14 @@ class UsersController < ApplicationController
       :first_name_name_kanji,
       :famliy_name_kana,
       :first_name_name_kana,
-      address_attributes:[:postal_cord,:prefectures,:municipalities,:house_number,:building_name,:phone_number]
+      :postal_cord,
+      :prefectures,
+      :municipalities,
+      :house_number,
+      :building_name,
+      :phone_number
     )
     end
-
-    # def address_params
-    #   params.require(:address).permit(
-    #     :postal_cord,
-    #     :prefectures,
-    #     :municipalities,
-    #     :house_number,
-    #     :building_name,
-    #     :phone_number
-    #   )
-    # end
 
     def card_params
       params.require(:card).permit(
@@ -210,7 +259,7 @@ class UsersController < ApplicationController
         return
       end
 
-      Date.new(20+date_yy.to_i/date_mm.to_i) 
+      Date.new 2000+date_yy.to_i,date_mm.to_i
     end
     
   

@@ -96,3 +96,5 @@ gem 'erb2haml'
 gem "recaptcha"
 
 gem 'active_hash'
+
+gem 'rails-i18n'

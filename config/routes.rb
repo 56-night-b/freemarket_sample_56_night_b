@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
+  devise_scope :sessions do
+    get 'sign_out', to: "sessions#logout"
+  end
   root :to => 'main#index'
   get 'users/mypage' => 'users#mypage'
   get 'users/mypage/notice' => 'users#notice'
@@ -12,10 +15,10 @@ Rails.application.routes.draw do
   get 'users/mypage/buy_products/transacted' => 'users#buy_transacted'
   get 'users/mypage/news' => 'users#news'
   get 'users/mypage/reviews' => 'users#reviews'
-  get 'logout' => 'users#logout'
   get 'users/mypage/profile' => 'users#profile'
   get 'users/mypage/card' => 'users#card'
   get 'users/mypage/identification' => 'users#identification'
+  get 'logout' => 'users#logout'
 
   resources :users do
     collection do

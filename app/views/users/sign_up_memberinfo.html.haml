@@ -43,6 +43,13 @@
   .main1
     .main1__toptext
       会員情報入力
+    - if @user.errors.any?
+      %h3
+        入力した内容にエラーが#{@user.errors.count}件あります
+      %ul
+        - @user.errors.full_messages.each do |message|
+          %li= message
+
     .main1__buttomtext
       = form_for @user, url:sign_up_tel_number_users_path, method: :get do |f|
         .field

@@ -42,6 +42,12 @@
   .main1.to-sign_up3
     .main1__toptext
       住所入力
+    - if @user.errors.any?
+      %h3
+        入力した内容にエラーが#{@user.errors.count}件あります
+      %ul
+        - @user.errors.full_messages.each do |message|
+          %li= message
     .main1__buttomtext
       = form_for @user, url:sign_up_payment_users_path, method: :get do |f|
         .field
@@ -63,50 +69,48 @@
               = f.text_field :famliy_name_kana, autofocus: true,placeholder: '例）ヤマダ' ,size:30
             .field-input__text
               = f.text_field :first_name_name_kana, autofocus: true,placeholder: '例）ハナコ' ,size:30
-          = f.fields_for :address do |f2|
-            .field
-              .field-input
-                .label2
-                  .field-input__label
-                    = f2.label :postal_cord,"郵便番号"
-                  .required-box 必須
-                .field-input__text
-                  = f2.text_field :postal_cord, autofocus: true,placeholder: '例）123-4567' ,size:30
-              .field-input
-                .label2
-                  .field-input__label
-                    = f2.label :prefectures,"都道府県"
-                  .required-box 必須
-                .field-input__text
-                  = f2.text_field :prefectures, autofocus: true,placeholder: '例）愛知県' ,size:30
-              .field-input
-                .label2
-                  .field-input__label
-                    = f2.label :municipalities,"市町村"
-                  .required-box 必須
-                .field-input__text
-                  = f2.text_field :municipalities, autofocus: true,placeholder: '例）名古屋市' ,size:30
-              .field-input
-                .label2
-                  .field-input__label
-                    = f2.label :house_number,"番地"
-                  .required-box 必須
-                .field-input__text
-                  = f2.text_field :house_number, autofocus: true,placeholder: '例）１番地' ,size:30
-              .field-input
-                .label2
-                  .field-input__label
-                    = f2.label :building_name,"建物名"
-                  .required-box 必須
-                .field-input__text
-                  = f2.text_field :building_name, autofocus: true,placeholder: '例）名古屋タワー' ,size:30
-              .field-input
-                .label2
-                  .field-input__label
-                    = f2.label :phone_number,"電話番号"
-                  .required-box 必須
-                .field-input__text
-                  = f2.text_field :phone_number, autofocus: true,placeholder: '例)08012345678' ,size:30
+          .field-input
+            .label2
+              .field-input__label
+                = f.label :postal_cord,"郵便番号"
+              .required-box 必須
+            .field-input__text
+              = f.text_field :postal_cord, autofocus: true,placeholder: '例）123-4567' ,size:30
+          .field-input
+            .label2
+              .field-input__label
+                = f.label :prefectures,"都道府県"
+              .required-box 必須
+            .field-input__text
+              = f.text_field :prefectures, autofocus: true,placeholder: '例）愛知県' ,size:30
+          .field-input
+            .label2
+              .field-input__label
+                = f.label :municipalities,"市町村"
+              .required-box 必須
+            .field-input__text
+              = f.text_field :municipalities, autofocus: true,placeholder: '例）名古屋市' ,size:30
+          .field-input
+            .label2
+              .field-input__label
+                = f.label :house_number,"番地"
+              .required-box 必須
+            .field-input__text
+              = f.text_field :house_number, autofocus: true,placeholder: '例）１番地' ,size:30
+          .field-input
+            .label2
+              .field-input__label
+                = f.label :building_name,"建物名"
+              .required-box 必須
+            .field-input__text
+              = f.text_field :building_name, autofocus: true,placeholder: '例）名古屋タワー' ,size:30
+          .field-input
+            .label2
+              .field-input__label
+                = f.label :phone_number,"電話番号"
+              .required-box 必須
+            .field-input__text
+              = f.text_field :phone_number, autofocus: true,placeholder: '例)08012345678' ,size:30
           .actions
             = f.submit "次に進む", class: 'btn1'
   

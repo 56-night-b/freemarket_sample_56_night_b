@@ -10,27 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_24_180417) do
-
-  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "postal_cord", null: false
-    t.string "prefectures", null: false
-    t.string "municipalities", null: false
-    t.integer "house_number", null: false
-    t.string "building_name", null: false
-    t.string "phone_number", null: false
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_addresses_on_user_id"
-  end
+ActiveRecord::Schema.define(version: 2020_01_18_102739) do
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "card_number", null: false
+    t.string "expiration_date", null: false
     t.integer "securitycord", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "expiration_date"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_cards_on_user_id"
   end
@@ -61,7 +48,7 @@ ActiveRecord::Schema.define(version: 2019_12_24_180417) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.integer "birthday"
-    t.bigint "my_phone_number", null: false
+    t.string "my_phone_number", null: false
     t.string "image"
     t.string "introduction"
     t.string "reset_password_token"
@@ -73,10 +60,14 @@ ActiveRecord::Schema.define(version: 2019_12_24_180417) do
     t.string "famliy_name_kana"
     t.string "first_name_name_kanji"
     t.string "first_name_name_kana"
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.integer "postal_cord"
+    t.string "prefectures"
+    t.string "municipalities"
+    t.string "house_number"
+    t.string "building_name"
+    t.string "phone_number"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "addresses", "users"
   add_foreign_key "cards", "users"
 end

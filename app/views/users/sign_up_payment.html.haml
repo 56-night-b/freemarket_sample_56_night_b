@@ -42,6 +42,12 @@
   .main1.to-sign_up3
     .main1__toptext
       支払い方法
+    - if @card.errors.any?
+      %h3
+        入力した内容にエラーが#{@card.errors.count}件あります
+      %ul
+        - @card.errors.full_messages.each do |message|
+          %li= message
     .main1__buttomtext
       = form_for @card, url:{controller:"users",action:"create" } do |f|
         .field
