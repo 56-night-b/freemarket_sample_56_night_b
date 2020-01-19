@@ -1,12 +1,14 @@
 = render partial: 'main/header'
 .card-whole
   .card-container
+    #breadcrumb
+      - breadcrumb :card
+      = breadcrumbs pretext: "",separator: " &rsaquo; "
     .card-main_box
       .card-main
         .card-main__title
           %h3
             支払い方法
-
         .card-main__content
           .card-main__content--card
             %Section
