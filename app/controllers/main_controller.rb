@@ -54,7 +54,7 @@ class MainController < ApplicationController
     @postage_burden = Product.find(params[:id]).postage_burden
     @shipping_origin = Product.find(params[:id]).shipping_origin
     @arrival_days = Product.find(params[:id]).arrival_days
-    @image_first = Image.where(product_id:@product).first
+    @image_first = Image.find_by(product_id:@product)
     @image = Image.where(product_id:@product)
     product_price = Product.find(params[:id]).value
     @product_price ="¥#{product_price.to_s(:delimited, delimiter: ',')}"
