@@ -8,6 +8,10 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     %link{crossorigin:"anonymous", href: "https://use.fontawesome.com/releases/v5.7.2/css/all.css", integrity: "sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr", rel: "stylesheet"}/
+    %link{:href => "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css", :rel => "stylesheet", :type => "text/css"}/
+    %script{src: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", type: "text/javascript"}
+
   %body
     %p.notice= notice
     %p.alert= alert
@@ -20,3 +24,7 @@
     -#   = link_to "新規作成", new_user_registration_path
     -#   = link_to "ログイン", new_user_session_path
     = yield
+
+    %script{:src => "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", :type => "text/javascript"}
+    %script{:src => "../js/slick.js"}
+

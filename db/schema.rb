@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(version: 2020_01_18_102739) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "nices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "value", null: false
     t.string "name", null: false
@@ -41,6 +48,10 @@ ActiveRecord::Schema.define(version: 2020_01_18_102739) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "brand"
+    t.integer "saler_id"
+    t.integer "buyer_id"
+    t.string "product_size"
+    t.string "shipping_method"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
