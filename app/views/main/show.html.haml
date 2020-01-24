@@ -3,11 +3,14 @@
 .show-page
   %section.item-box-outer
     .item-name
-      クルマ
+      =@product_name
     .item-main-box
       .item-image-box
         .item-image
-          -# =image_tag 'vw.jpeg'
+          = image_tag @image_first.image, size: "180x180", class: "center-item"
+        .item-image-bottom
+          - @image.each do |image,i|
+            = image_tag image.image, size: "60x60", class: "sample"
       %table.item-deta-outer
         %tbody
           %tr.item-deta-box
@@ -15,7 +18,7 @@
               出品者
             %td.item-deta-box_cell
               %a.sell-name.blue-text
-                test
+                = @saler.nickname
               .face-box
                 .face-box_good.clear-text
                   %a=image_tag 'grin-solid.svg',width:16,height:16
@@ -36,15 +39,15 @@
               カテゴリー
             %td.item-deta-box_cell
               %a.item-main-categly.blue-text.clear-text
-                自動車
+                =@category
               .item-sub-categly
                 %a.blue-text.clear-text
                   %i.fa.fa-angle-right.icon-size{"aria-hidden" => "true"}
-                  ドイツ車
+                  
               .item-sub-categly
                 %a.blue-text.clear-text
                   %i.fa.fa-angle-right.icon-size{"aria-hidden" => "true"}
-                  VW
+                  
 
             -# categoly
           %tr.item-deta-box  
@@ -52,59 +55,61 @@
               ブランド
             %td.item-deta-box_cell
               %a.blue-text.clear-text
-                VW
+                =@brand
             -# brand
           %tr.item-deta-box  
             %th.item-deta-box_title
               商品のサイズ
             %td.item-deta-box_cell
-              L
+              =@product_size
             -# size
           %tr.item-deta-box  
             %th.item-deta-box_title
               商品の状態
             %td.item-deta-box_cell
-              目立った傷や汚れなし
+              =@producut_situation
             -# condition
           %tr.item-deta-box  
             %th.item-deta-box_title
               配送料の負担
             %td.item-deta-box_cell
-              送料込み(出品者負担)
+              =@postage_burden
             -# charge
-          %tr.item-deta-box  
+          %tr.item-deta-box
             %th.item-deta-box_title
               配送の方法
             %td.item-deta-box_cell
-              らくらくメルカリ便
+              =@shipping_method
             -# method
           %tr.item-deta-box 
             %th.item-deta-box_title
               配送元地域
             %td.item-deta-box_cell.blue-text
               %a.blue-text.clear-text
-                兵庫県
+                =@shipping_origin
             -# area
           %tr.item-deta-box 
             %th.item-deta-box_title
               配送日の目安
             %td.item-deta-box_cell
-              2~3日で発送
+              =@arrival_days
             -# Indication
     .item-place-box
       %span.item-place
-        ¥5,000,000
+        =@product_price
       %span.item-tax
         (税込)
       %span.item-shopping-fee
         送料込み
       .item-purchase-box
-        %a.item-purchase-box_btn
-          購入画面に進む
-       
+        .item-purchase-box_btn
+          -if @soldout_btn.present?
+            売り切れました
+          - else
+            = link_to "購入画面に進む",product_purchase_confirmation_main_index_path(@product),:style=>"color:white;"
     .item-text-box
       %p.item-text
-        eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+        =@product_explanation
     .item-under-box
       .left-box-like
         .left-box-like_icon
@@ -133,10 +138,11 @@
       .comment-box_message
         %p
         相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    =form_for @product do |f|
       %textarea.comment-box_form
       .comment-box_btn
         %span.btn-text
-        コメントする     
+          = f.submit 'コメントする', id: 'chat-footer__send-btn', class: 'comment-box_btn'
 
   %ul.link-box
     %li.link-box_left
@@ -175,158 +181,22 @@
 
   .example-item-box
     .example-item-box_title.blue-text
-      iiiiiiiiiiiiiiiiのその他の商品
+      ="#{@saler.nickname}のその他の商品"
       .example-item-box_flex
-        .example-item-box_content
-          .item_content
-            = link_to ("https://ja-jp.facebook.com/") do 
-              %div
-                .example-item-image
-                  = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",class: "example-image"
-              .example-item-text-box
-                %p.font-text
-                  ttttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeeeee
-                  .example-item-text-box_place
-                  %p.font-place
-                    ¥33333333333
-        .example-item-box_content            
-          .item_content
-            = link_to ("https://ja-jp.facebook.com/") do 
-              %div
-                .example-item-image
-                  = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",class: "example-image"
-              .example-item-text-box
-                %p.font-text
-                  ttttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeeeee
-                  .example-item-text-box_place
-                  %p.font-place
-                    ¥33333333333
-        .example-item-box_content
-          .item_content
-            = link_to ("https://ja-jp.facebook.com/") do 
-              %div
-                .example-item-image
-                  = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",class: "example-image"
-              .example-item-text-box
-                %p.font-text
-                  ttttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeeeee
-                  .example-item-text-box_place
-                  %p.font-place
-                    ¥33333333333
-      .example-item-box_flex
-        .example-item-box_content
-          .item_content
-            = link_to ("https://ja-jp.facebook.com/") do 
-              %div
-                .example-item-image
-                  = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",class: "example-image"
-              .example-item-text-box
-                %p.font-text
-                  ttttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeeeee
-                  .example-item-text-box_place
-                  %p.font-place
-                    ¥33333333333
-        .example-item-box_content            
-          .item_content
-            = link_to ("https://ja-jp.facebook.com/") do 
-              %div
-                .example-item-image
-                  = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",class: "example-image"
-              .example-item-text-box
-                %p.font-text
-                  ttttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeeeee
-                  .example-item-text-box_place
-                  %p.font-place
-                    ¥33333333333
-        .example-item-box_content
-          .item_content
-            = link_to ("https://ja-jp.facebook.com/") do 
-              %div
-                .example-item-image
-                  = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",class: "example-image"
-              .example-item-text-box
-                %p.font-text
-                  ttttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeeeee
-                  .example-item-text-box_place
-                  %p.font-place
-                    ¥33333333333
-
-      .example-item-box_title.blue-text
-        iiiiiiiiiiiiiiiiのその他の商品
-        .example-item-box_flex
+        - @user_sellingProduct.zip(@user_sellingImage).each do |product, image|
           .example-item-box_content
             .item_content
-              = link_to ("https://ja-jp.facebook.com/") do 
+              = link_to main_path(@product) do
                 %div
                   .example-item-image
-                    = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",class: "example-image"
+                    = image_tag image.image, size: "180x180", class: "example-image"
                 .example-item-text-box
                   %p.font-text
-                    ttttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeeeee
+                    =product.name
                     .example-item-text-box_place
                     %p.font-place
-                      ¥33333333333
-          .example-item-box_content            
-            .item_content
-              = link_to ("https://ja-jp.facebook.com/") do 
-                %div
-                  .example-item-image
-                    = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",class: "example-image"
-                .example-item-text-box
-                  %p.font-text
-                    ttttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeeeee
-                    .example-item-text-box_place
-                    %p.font-place
-                      ¥33333333333
-          .example-item-box_content
-            .item_content
-              = link_to ("https://ja-jp.facebook.com/") do 
-                %div
-                  .example-item-image
-                    = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",class: "example-image"
-                .example-item-text-box
-                  %p.font-text
-                    ttttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeeeee
-                    .example-item-text-box_place
-                    %p.font-place
-                      ¥33333333333
-        .example-item-box_flex.margin-bottom
-          .example-item-box_content
-            .item_content
-              = link_to ("https://ja-jp.facebook.com/") do 
-                %div
-                  .example-item-image
-                    = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",class: "example-image"
-                .example-item-text-box
-                  %p.font-text
-                    ttttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeeeee
-                    .example-item-text-box_place
-                    %p.font-place
-                      ¥33333333333
-          .example-item-box_content            
-            .item_content
-              = link_to ("https://ja-jp.facebook.com/") do 
-                %div
-                  .example-item-image
-                    = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",class: "example-image"
-                .example-item-text-box
-                  %p.font-text
-                    ttttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeeeee
-                    .example-item-text-box_place
-                    %p.font-place
-                      ¥33333333333
-          .example-item-box_content
-            .item_content
-              = link_to ("https://ja-jp.facebook.com/") do 
-                %div
-                  .example-item-image
-                    = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",class: "example-image"
-                .example-item-text-box
-                  %p.font-text
-                    ttttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeeeee
-                    .example-item-text-box_place
-                    %p.font-place
-                      ¥33333333333
+                      ="¥#{product.value}"
+      
   .under-box
     %ul
       %li.under-box_content
@@ -353,6 +223,24 @@
 = render 'footer'
 
 
+%script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"}
+%script{:src => "slick/slick.min.js", :type => "text/javascript"}
 
-    
+:javascript
+  $('.center-item').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  fade: true,
+  asNavFor: '.center-item'
+  });
+
+  $('.sample').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  asNavFor: '.sample',
+  dots: true,
+  centerMode: true,
+  focusOnSelect: true
+  });
 

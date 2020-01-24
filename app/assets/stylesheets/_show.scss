@@ -28,9 +28,6 @@
   max-width:300px;
   max-height:300px;
   background-size:300px 200px;
-  background: image-url("vw.jpeg");
- 
-  
 }
 
 
@@ -333,6 +330,7 @@
   // height: 700px;
   box-sizing: border-box;
   margin-bottom: 40px;
+  
   // padding:0 0 0 5px;
   
   
@@ -369,13 +367,12 @@
   }
   &_content {
     
-      width: 220px;
+      width: 700px;
       box-sizing: border-box;
-      
       // flex-basis:220px;
       // max-width: 220px;
       background: #fff;
-     
+      display:flex;
       // object-fit:cover;
       // background-color: #fff;
       
@@ -443,9 +440,7 @@
                     cursor: pointer;
                   }
 
-.example-item-image img {
-  width: 100%;
-}
+
 
 .font-text {
   color: #333;
