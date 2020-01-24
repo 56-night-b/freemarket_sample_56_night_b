@@ -180,12 +180,10 @@ class UsersController < ApplicationController
       expiration_date: session[:expiration_date],
       securitycord: session[:securitycord]
     )
-    binding.pry
     render 'sign_up_payment' unless @card.valid?(:validates_step4)
   end
 
   def create
-    binding.pry
     @user = User.new(
       nickname: session[:nickname], # sessionに保存された値をインスタンスに渡す
       email: session[:email],
@@ -204,7 +202,6 @@ class UsersController < ApplicationController
       phone_number: session[:phone_number]
     )
     @user.save
-    binding.pry
     user_card = @user.id
     @card = Card.new(
       card_number: session[:card_number],
@@ -214,7 +211,6 @@ class UsersController < ApplicationController
       created_at: @user.created_at,
       updated_at: @user.updated_at
     )
-    binding.pry
     @card.save
     # ログインするための情報を保管
     session[:id] = @user.id
