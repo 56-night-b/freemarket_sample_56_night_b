@@ -1,0 +1,6 @@
+= form_tag("/users/login") do
+  %p メールアドレス
+  %input{:name => "email", :value => "#{@email}"}/
+  %p パスワード
+  %input{:name => "#{@password}", :type => "password"}/
+  %input{:type => "submit", :value => "ログイン"}/
