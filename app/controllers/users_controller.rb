@@ -13,7 +13,52 @@ class UsersController < ApplicationController
   end
 
   def selling
+    @product = params[:id]
+    @selling_product = Product.where(saler_id:3)
+    @user_sellingProduct_group = Image.group(:product_id)
+    @user_sellingImage = @user_sellingProduct_group.where(product_id:@selling_product.ids)
   end
+
+  def form
+  end
+
+  def destroy
+    @product = params[:id]
+    @product = Product.find(params[:id])
+    @product.destroy if @product.saler_id == current_user.id
+    @image = Image.where(product_id:params[:id])
+    @image.destroy_all if @product.saler_id == current_user.id
+    flash[:notice] = "商品を削除しました"
+    redirect_to users_mypage_path
+  end
+
+  def show
+    @product = params[:id]
+    @product_name =Product.find(params[:id]).name
+    @saler = Product.find(params[:id]).saler
+    @category = Product.find(params[:id]).category
+    @brand = Product.find(params[:id]).brand
+    @product_size = Product.find(params[:id]).product_size
+    @shipping_method = Product.find(params[:id]).shipping_method
+    @producut_situation = Product.find(params[:id]).producut_situation
+    @postage_burden = Product.find(params[:id]).postage_burden
+    @shipping_origin = Product.find(params[:id]).shipping_origin
+    @arrival_days = Product.find(params[:id]).arrival_days
+    @image_first = Image.find_by(product_id:@product)
+    @image = Image.where(product_id:@product)
+    product_price = Product.find(params[:id]).value
+    @product_price ="¥#{product_price.to_s(:delimited, delimiter: ',')}"
+    @soldout_btn = Product.find(params[:id]).buyer
+
+    @user_sellingProduct = Product.where(saler_id:@saler.id).order("id DESC").limit(6)
+    @user_sellingProduct_group = Image.group(:product_id)
+    @user_sellingImage = @user_sellingProduct_group.where(product_id:@user_sellingProduct.ids).order("id DESC").limit(6)
+
+    @user_brand = Product.where(brand: @brand).order("id DESC").limit(10)
+    @user_brand_group = Image.group(:product_id)
+    @user_brandImage = @user_brand_group.where(brand:@brand).order("id DESC")
+  end
+
 
   def transacting
   end

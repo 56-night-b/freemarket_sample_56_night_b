@@ -1,7 +1,17 @@
-= render 'header'
+!!!
+%html{lang: "ja"}
+  %head
+    %meta{charset: "utf-8"}
+    %link{rel: "stylesheet", href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css"}
+    %script{src:"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"}
+    %script{src:"/assets/users_show.js"}
+%body
+
+
+= render 'main/header'
 
 .show-page
-  %section.item-box-outer
+  %section.users-showitem-box-outer
     .item-name
       =@product_name
     .item-main-box
@@ -101,38 +111,23 @@
         (税込)
       %span.item-shopping-fee
         送料込み
-      .item-purchase-box
-        .item-purchase-box_btn
-          -if @soldout_btn.present?
-            売り切れました
-          - else
-            = link_to '購入画面に進む', "/main/product_purchase_confirmation/#{@product}",:style=>"color:white;"
     .item-text-box
       %p.item-text
         =@product_explanation
-    .item-under-box
-      .left-box-like
-        .left-box-like_icon
-          %i.fa.fa-heart-o.heart-icon
-        .left-box-like_text
-          %span
-            いいね!
-        .left-box-like_value
-          %span
-            2
-      .left-box-report
-        .left-box-report_icon
-          %i.fa.fa-flag-o
-        .left-box-report_text
-          %span
-            不適切な商品の報告
-      .safety-btn-box
-        %i.material-icons.lock-icon
-          lock
-          %span.safety-btn-box_text.clear-text
-            あんしん・あんぜんへの取り組み
 
+    .item-purchase-usersshowbox
+      .item-purchase-box_btn
+        = link_to '商品の編集', "/main/product_purchase_confirmation/#{@product}",:style=>"color:white;"
+    .item-purchase-usersshowbox
+      .item-purchase-box_btn
+        = link_to '出品を一旦停止する', "#",:style=>"color:white;"
+    .item-purchase-usersshowbox
+      .item-purchase-box_btn
+        #open
+          %p 商品の削除
 
+        
+        
   .comment-box_outer
     .comment-box
       .comment-box_message
@@ -206,18 +201,19 @@
       %li.under-box_content
         VW
 
+#mask.hidden
 
+#modal.hidden
+  %p 確認
+  削除すると二度と復活できません。
+  %br/
+  削除する代わりに停止することもできます。
+  %br/
+  本当に削除しますか？
+  .ConfirmSelect
+    %btn#close 
+      %p キャンセル
+    #DeleteBtn
+      = link_to '削除',"/users/#{@product}",method: :delete
 
-        
-
-
-  
-
--# .item-image
--#   = link_to ("https://ja-jp.facebook.com/") do 
--#     %div
--#       .image-text
--#         = image_tag src="https://static.mercdn.net/thumb/photos/m69790812477_1.jpg?1571538899",size: '180x180',class: "example-image"
--#         %p ¥18,000
--#         %figcaption supreme
-= render 'footer'
+= render 'main/footer'

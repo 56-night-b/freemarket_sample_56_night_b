@@ -333,11 +333,6 @@
   
   // padding:0 0 0 5px;
   
-  
-  
-
-  
-
   &_title {
     margin: 30px auto;
     font-size: 22px;
@@ -357,7 +352,7 @@
     -moz-box-pack:justify;
     -webkit-box-pack:justify;
     -o-box-pack:justify;
-    -ms-box-pack:justify
+    -ms-box-pack:justify;
     
  
   
@@ -449,8 +444,6 @@
   height: 48px;
   overflow: hidden;
   word-break: break-all;
-
-
 }
 
 .font-place {
@@ -465,4 +458,47 @@
     margin: 0 8px;
     font-size: 16px;
     color: #888;
+}
+
+
+.item-purchase-usersshowbox {
+  height: 60px;
+  margin-top:16px;
+  background-color:#ea352e;
+  cursor: pointer;
+   
+  &_btn {
+    font-size:24px;
+    font-weight: 600;
+    line-height: 60px;
+    display: block;
+    color:#fff;
+
+  }
+}
+
+.users-showitem-box-outer {
+  margin: 40px auto 0;
+  background-color: #FFFF;
+  width:620px;
+  padding: 24px 40px 40px ;
+  height:800px;
+}
+
+.item-purchase-box {
+  height: 60px;
+  margin-top:16px;
+  background-color:#ea352e;
+  cursor: pointer;
+  
+   
+  &_btn {
+    font-size:24px;
+    font-weight: 600;
+    line-height: 60px;
+    display: block;
+    color:#fff;
+    text-align: center;
+
+  }
 }
