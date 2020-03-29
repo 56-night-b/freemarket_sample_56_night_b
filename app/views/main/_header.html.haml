@@ -2,11 +2,11 @@
   .HeaderContents
     .HeaderContents-HeaderTopSide
       .HeaderContents-HeaderTopSide--TopLogo
-      = link_to(image_tag('merukari-header-logo.svg', size: '136x36', border: 0), 'http://www.yahoo.co.jp', popup: true)
+      = link_to(image_tag('merukari-header-logo.svg', size: '136x36', border: 0), '#', popup: true)
 
         
       .HeaderContents-HeaderTopSide--form
-        %form.HeaderContents-HeaderTopSide--form1{action: "自分のサイトURL", method: "get"}
+        %form.HeaderContents-HeaderTopSide--form1{action: "#", method: "get"}
           %input.HeaderContents-HeaderTopSide--box1{name: " ", placeholder: "何かお探しですか？", type: "text"}/
           %button.btn{type: "submit"}
             %i.fa.fa-search{"aria-hidden" => "true"}
@@ -28,11 +28,11 @@
             = link_to("いいね一覧", "#")
           %li.HeaderContentsHeaderBottomSide-BottomRight__UserContents-news
             %i.fa.fa-bell{"aria-hidden" => "true"}
-            = link_to("お知らせ", "http://google.co.jp")
+            = link_to("お知らせ", "#")
           %li.HeaderContentsHeaderBottomSide-BottomRight__UserContents-todo
             %i.fa.fa-check{"aria-hidden" => "true"}
-            = link_to("やることリスト", "http://google.co.jp")
+            = link_to("やることリスト", "#")
           %li.HeaderContentsHeaderBottomSide-BottomRight__UserContents-mypage
             = image_tag src="https://static.mercdn.net/images/member_photo_noimage_thumb.png",size: '32x32',class: "mypage-image"
             %p#mypage
-              = link_to("マイページ", )
+              = link_to "マイページ", users_mypage_path

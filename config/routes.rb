@@ -16,6 +16,11 @@ Rails.application.routes.draw do
   get 'users/mypage/profile' => 'users#profile'
   get 'users/mypage/card' => 'users#card'
   get 'users/mypage/identification' => 'users#identification'
+  get 'users/mypage/show/:id', to:'users#show'
+  get 'test/index' => 'test#index'
+  get 'users/form' => 'users#form'
+  post 'users/login' => 'users#login'
+  delete 'users/:id', to:'users#destroy'
 
   resources :users do
     collection do
@@ -29,9 +34,11 @@ Rails.application.routes.draw do
 
   resources :main do
     collection do
-      get 'product_purchase_confirmation'
+      get '/product_purchase_confirmation/:id', to: 'main#product_purchase_confirmation'
     end
   end
+
+  
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

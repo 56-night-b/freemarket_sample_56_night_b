@@ -34,11 +34,17 @@
               %li.contents2__mainlist2.show2
                 %ul
                   %li
-                    .massage--box
-                      .bgcolor-box9
-                      %p
-                        取引中の商品はありません
-
-        = render partial: 'sidber'
-
-    = render partial: 'main/footer'
+                    - if @selling_product.present?
+                      - @selling_product.zip(@user_sellingImage).each do |name, image|
+                        .massage
+                        = link_to user_path(name) do
+                          .massage--box
+                            = image_tag image.image, size: "60x60", class: "center-item"
+                          .massage--name
+                            =name.name
+                    - else
+                      .massage--box
+                        .bgcolor-box9
+                          %p
+                          取引中の商品はありません
+        = render  'sidber'

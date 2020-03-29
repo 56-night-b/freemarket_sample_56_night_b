@@ -70,6 +70,48 @@ class MainController < ApplicationController
   end
 
   def product_purchase_confirmation#商品購入確認
+    @product = params[:id]
+    @product_name =Product.find(params[:id]).name
+    product_price = Product.find(params[:id]).value
+    @product_price ="¥#{product_price.to_s(:delimited, delimiter: ',')}"
+    @image_first = Image.find_by(product_id:@product)
+
+    card = current_user.card_number
+    if card.blank?
+      redirect_to action: "product_purchase_confirmation" 
+    else
+      Payjp.api_key = "sk_test_0e2eb234eabf724bfaa4e676"
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      @customer_card = customer.cards.retrieve(card.card_id)
+    end
   end
+
   
+  def buy #クレジット購入
+    if card.blank?
+      redirect_to action: "new"
+      flash[:alert] = '購入にはクレジットカード登録が必要です'
+    else
+      @product = Product.find(params[:id])
+    
+      card = current_user.card_number
+    
+      Payjp.api_key = "sk_test_0e2eb234eabf724bfaa4e676"
+    # キーをセットする(環境変数においても良い)
+      Payjp::Charge.create(
+      amount: @product_price, #支払金額
+      customer: card.customer_id, #顧客ID
+      currency: 'jpy', #日本円
+      )
+    # ↑商品の金額をamountへ、cardの顧客idをcustomerへ、currencyをjpyへ入れる
+      if @product.update(buyer_id: current_user.id)
+        flash[:notice] = '購入しました。'
+        redirect_to controller: "products", action: 'show'
+      else
+        flash[:alert] = '購入に失敗しました。'
+        redirect_to controller: "products", action: 'show'
+      end
+    #↑この辺はこちら側のテーブル設計どうりに色々しています
+    end
+  end
 end
